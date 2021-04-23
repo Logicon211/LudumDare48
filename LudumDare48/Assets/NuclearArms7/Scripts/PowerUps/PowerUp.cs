@@ -22,7 +22,7 @@ public abstract class PowerUp : MonoBehaviour
 
     private float healthCost;
 
-    private Boolean instantiated = false;
+    // private Boolean instantiated = false;
     private Boolean isFree = false;
 
     private bool pickupable;
@@ -35,7 +35,7 @@ public abstract class PowerUp : MonoBehaviour
         healthBar = GameObject.FindWithTag("Health Bar").GetComponent<HealthBar>();
         craig = GameObject.FindGameObjectWithTag("Player").GetComponent<CraigController>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        instantiated = true;
+        // instantiated = true;
     }
 
     // Update is called once per frame

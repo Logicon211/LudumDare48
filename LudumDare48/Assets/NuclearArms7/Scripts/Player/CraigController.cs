@@ -13,7 +13,7 @@ public class CraigController : MonoBehaviour
 
     public float maxHealth = 200f;
     public float health = 200f;
-    private float energy = 0f;
+    // private float energy = 0f;
     private float bulletVelocity = 50f;
 
     public GameObject bullet;
@@ -31,7 +31,7 @@ public class CraigController : MonoBehaviour
     private float punchCharge;
     Vector2 direction;
     private bool SpacebarDown;
-    private bool Dodging;
+    // private bool Dodging;
     private Vector2 DodgeDirection;
     private Vector2 NewPos;
     private float dodgeCooldown;
@@ -42,7 +42,7 @@ public class CraigController : MonoBehaviour
     private float punchCooldown;
     private Vector2 punchDirecion;
 
-    private bool usingShotgun = true;
+    // private bool usingShotgun = true;
 
     private AudioSource AS;
     private GameObject particles;
@@ -109,7 +109,7 @@ public class CraigController : MonoBehaviour
         }
         gameManager = gameControllerObject.GetComponent<GameManager>();
         PlayerRigidBody = this.GetComponent<Rigidbody2D>();
-        Dodging = false;
+        // Dodging = false;
         NewPos = transform.position;
         animator = GetComponent<Animator>();
         AS = GetComponent<AudioSource>();

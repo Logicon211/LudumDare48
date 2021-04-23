@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Final Levels/Intro Scene.unity
+    path: Assets/NuclearArms7/Scenes/Final Levels/Intro Scene.unity
     guid: 80ed420d3dd8eb24ab862f2996cf8c54
   - enabled: 1
-    path: Assets/Scenes/Final Levels/LoadingScene.unity
+    path: Assets/NuclearArms7/Scenes/Final Levels/LoadingScene.unity
     guid: 341d782ee9704674c8d0df66362204bf
   - enabled: 1
-    path: Assets/Scenes/Final Levels/MainScene.unity
+    path: Assets/NuclearArms7/Scenes/Final Levels/MainScene.unity
     guid: 7cf055e08964e6b4a95214e1b0a9167b
   - enabled: 1
-    path: Assets/Scenes/Final Levels/GameOverScreen.unity
+    path: Assets/NuclearArms7/Scenes/Final Levels/GameOverScreen.unity
     guid: 24969f6a209ffd34d96f73042b6a625d
   - enabled: 1
-    path: Assets/Scenes/Final Levels/VictoryScene.unity
+    path: Assets/NuclearArms7/Scenes/Final Levels/VictoryScene.unity
     guid: 5bc1ed12e7f08d14fa251f33f6fe273c
   - enabled: 1
-    path: Assets/Scenes/Final Levels/InGameCutScenes/Pre-BossScene.unity
+    path: Assets/NuclearArms7/Scenes/Final Levels/InGameCutScenes/Pre-BossScene.unity
     guid: 61d51b07bb886cc479d466944a1b6761
   - enabled: 1
-    path: Assets/Scenes/Final Levels/InGameCutScenes/SecondBossScene.unity
+    path: Assets/NuclearArms7/Scenes/Final Levels/InGameCutScenes/SecondBossScene.unity
     guid: 6ba777b6b41e8124a9c6fedb4af76ee9
   m_configObjects: {}

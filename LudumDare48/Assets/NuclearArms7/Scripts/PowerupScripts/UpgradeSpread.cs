@@ -8,7 +8,7 @@ public class UpgradeSpread : PowerUp
     private CraigController cc;
     
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
         base.Start();
         cc = (GameObject.FindGameObjectWithTag("Player")).GetComponent<CraigController>();

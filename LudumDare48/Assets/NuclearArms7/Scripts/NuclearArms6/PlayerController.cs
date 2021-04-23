@@ -58,14 +58,14 @@ private float dodgeCooldown;
 Animator animator;
 private bool punchCharging;
 private Vector2 punchChargeDirection;
-private bool punching;
+// private bool punching;
 private float punchCooldown;
 private Vector2 punchDirecion;
 
 private bool usingShotgun = false;
 private bool usingLazer = false;
 private bool isShielded = false;
-private bool usingWrench = false;
+// private bool usingWrench = false;
 public float speedBoostTime = 0f;
 
 private GameObject punchCollider;
@@ -222,7 +222,7 @@ private int LAZER_ANIMATION_LAYER = 2;
                 //Hold for left click held down below
             } else {
                 animator.SetBool("Punching", true);
-                punching = true;
+                // punching = true;
             }
         }
 
@@ -286,7 +286,7 @@ private int LAZER_ANIMATION_LAYER = 2;
                 damagable.Damage(punchDamage);
             }
         }
-        punching = false;
+        // punching = false;
         animator.SetBool("Punching", false);
     }
 
@@ -326,7 +326,7 @@ private int LAZER_ANIMATION_LAYER = 2;
 
         usingShotgun = false;
         usingLazer = false;
-        usingWrench = false;
+        // usingWrench = false;
     }
 
     public void PickupShotgun() {
@@ -336,7 +336,7 @@ private int LAZER_ANIMATION_LAYER = 2;
 
         usingShotgun = true;
         usingLazer = false;
-        usingWrench = false;
+        // usingWrench = false;
 
         energySlider.maxValue = 3;
         energy = 3;
@@ -349,7 +349,7 @@ private int LAZER_ANIMATION_LAYER = 2;
 
         usingShotgun = false;
         usingLazer = true;
-        usingWrench = false;
+        // usingWrench = false;
 
         energySlider.maxValue = 100f;
         energy = 100f;
@@ -378,7 +378,7 @@ private int LAZER_ANIMATION_LAYER = 2;
 
         usingShotgun = false;
         usingLazer = false;
-        usingWrench = true;
+        // usingWrench = true;
 
         energySlider.maxValue = 100f;
         energy = 100f;

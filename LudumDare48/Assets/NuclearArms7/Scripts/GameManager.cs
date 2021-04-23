@@ -19,20 +19,20 @@ public class GameManager : MonoBehaviour {
 	private WaveSpawnManager spawnManager;
 
 	private bool paused = false;
-	private bool inCutScene = false;
+	// private bool inCutScene = false;
 	private bool victory = false;
 	private bool loss = false;
 
-	private int enemyCount = 0;
-	private int bossCount = 0;
-	private int currentLevel = 0;
-	private int maxLevel = 0;
+	// private int enemyCount = 0;
+	// private int bossCount = 0;
+	// private int currentLevel = 0;
+	// private int maxLevel = 0;
 
 	private bool bossMessageDone;
 	private int bossMessageCount;
 	private string[] cutscenes = {"Pre-BossScene", "SecondBossScene"};
 
-	private int nextCutsceneIndex = 0;
+	// private int nextCutsceneIndex = 0;
 	private int currentCutSceneIndex;
 	private AudioSource AS;
 	private AudioLowPassFilter lpFilter;
@@ -297,7 +297,7 @@ public class GameManager : MonoBehaviour {
 		victory = false;
 		loss = false;
 		SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
-		currentLevel = 0;
+		// currentLevel = 0;
 		// enemyCount = spawnManager.GetNumOfEnemiesOnLevel(currentLevel);
 		// bossCount = spawnManager.GetNumOfBossesOnLevel(currentLevel);
 		// spawnManager.SpawnWave(currentLevel);

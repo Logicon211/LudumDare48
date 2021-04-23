@@ -5,9 +5,9 @@ using Enemy.Interface;
 
 public class KillJane : MonoBehaviour, IKillable, IDamageable<float>
 {
-    [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
+    // [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
     [SerializeField] private float health = 10f;
-    [SerializeField] private float shootCooldown = 5f;
+    // [SerializeField] private float shootCooldown = 5f;
     [SerializeField] private float attackDamage = 5f;
     [SerializeField] private float maxRangeToLandAttack = 7f;
     public Animator animator;
@@ -20,7 +20,7 @@ public class KillJane : MonoBehaviour, IKillable, IDamageable<float>
 
     public RoomController roomController;
 	
-    private AudioSource audio;
+    private AudioSource audioSource;
     private Rigidbody2D enemyBody;
     private Vector3 velocity = Vector3.zero;
     private GameManager gameManager;
@@ -32,7 +32,7 @@ public class KillJane : MonoBehaviour, IKillable, IDamageable<float>
     private SpriteRenderer spriteRenderer;
 
     private bool isDead = false;
-    private bool isAttacking = false;
+    // private bool isAttacking = false;
 
     private Transform shootPosition;
 
@@ -51,7 +51,7 @@ public class KillJane : MonoBehaviour, IKillable, IDamageable<float>
     private Vector3 moveDir = Vector3.zero;
 
     private float currentAttackCooldown;
-    private float currentCooldown;
+    // private float currentCooldown;
 
     private bool dash = false;
     private bool attack = false;
@@ -60,8 +60,8 @@ public class KillJane : MonoBehaviour, IKillable, IDamageable<float>
     private Vector2 dashVelocity;
 
     private bool dashNext = false;
-    private bool dashNext2 = false;
-    private bool dashNext3 = false;
+    // private bool dashNext2 = false;
+    // private bool dashNext3 = false;
     private bool attackNext = true;
 
     [SerializeField] private float timeBetweenVoiceLines = 20f;
@@ -69,7 +69,7 @@ public class KillJane : MonoBehaviour, IKillable, IDamageable<float>
     [Range(0, 50)] [SerializeField] private int amountOfBulletsAtATime = 1;
     [Range(0f, 360f)][SerializeField] private float projectileSpread = 25f;
     public Transform shotOriginatingLocation;
-    [Range(1f, 100f)] [SerializeField] private float projectileSize = 1f;
+    // [Range(1f, 100f)] [SerializeField] private float projectileSize = 1f;
     [Range(0f, 50f)][SerializeField] private float projectileSpeed = 1f;
     [Range(0f, 1f)][SerializeField] private float projectileSpawnRate = 0.2f;
 
@@ -84,11 +84,11 @@ public class KillJane : MonoBehaviour, IKillable, IDamageable<float>
 
     private void Awake() {
         enemyBody = GetComponent<Rigidbody2D>();
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
         craigController = player.GetComponent<CraigController>();
-        currentCooldown = 2f;
+        // currentCooldown = 2f;
         currentProjectileCooldown = projectileSpawnRate;
         currentTimeBetweenVoiceLines = timeBetweenVoiceLines/2;
     }
@@ -227,7 +227,7 @@ public class KillJane : MonoBehaviour, IKillable, IDamageable<float>
     public void Attack(float tarX, float tarY)
     {
         animator.SetTrigger("Attack");
-        audio.PlayOneShot(attackSound);
+        audioSource.PlayOneShot(attackSound);
         RegularSpreadAttack();
     }
 

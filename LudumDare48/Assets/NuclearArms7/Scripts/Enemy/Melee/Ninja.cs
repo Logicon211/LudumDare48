@@ -9,7 +9,7 @@ public class Ninja: MonoBehaviour, IDamageable<float>, IKillable, IEnemy
     
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
     [SerializeField] private float health = 10f;
-    [SerializeField] private float shootCooldown = 5f;
+    // [SerializeField] private float shootCooldown = 5f;
     [SerializeField] private float attackDamage = 5f;
     [SerializeField] private float maxRangeToLandAttack = 7f;
     public Animator animator;
@@ -21,10 +21,10 @@ public class Ninja: MonoBehaviour, IDamageable<float>, IKillable, IEnemy
 
     public RoomController roomController;
 	
-    private AudioSource audio;
+    private AudioSource audioSource;
     private Rigidbody2D enemyBody;
     private Vector3 velocity = Vector3.zero;
-    private float currentCooldown;
+    // private float currentCooldown;
     private GameManager gameManager;
     private GameObject player;
     private EnemyController enemyController;
@@ -34,7 +34,7 @@ public class Ninja: MonoBehaviour, IDamageable<float>, IKillable, IEnemy
     private SpriteRenderer spriteRenderer;
 
     private bool isDead = false;
-    private bool isAttacking = false;
+    // private bool isAttacking = false;
 
     private Transform shootPosition;
     public Transform explodeLocation;
@@ -43,11 +43,11 @@ public class Ninja: MonoBehaviour, IDamageable<float>, IKillable, IEnemy
     
     private void Awake() {
         enemyBody = GetComponent<Rigidbody2D>();
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
         enemyController = GetComponent<EnemyController>();
-        currentCooldown = 2f;
+        // currentCooldown = 2f;
     }
     
     private void Start()
@@ -137,7 +137,7 @@ public class Ninja: MonoBehaviour, IDamageable<float>, IKillable, IEnemy
     public void Attack(float attackSpeed)
     {
         animator.SetTrigger("Attack");
-        audio.PlayOneShot(attackSound);
+        audioSource.PlayOneShot(attackSound);
     }
 
     public void FinishPunch()

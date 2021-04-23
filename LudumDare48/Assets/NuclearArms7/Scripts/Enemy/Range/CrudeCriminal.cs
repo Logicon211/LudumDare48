@@ -13,7 +13,7 @@ public class CrudeCriminal : MonoBehaviour, IEnemy, IKillable, IDamageable<float
     public GameObject explosion;
     public GameObject poofEffect;
 
-    private AudioSource audio;
+    private AudioSource audioSource;
     private Rigidbody2D enemyBody;
 
     private Vector3 velocity = Vector3.zero;
@@ -37,7 +37,7 @@ public class CrudeCriminal : MonoBehaviour, IEnemy, IKillable, IDamageable<float
 
     private void Awake() {
         enemyBody = GetComponent<Rigidbody2D>();
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         currentCooldown = 2f;
     }
 
@@ -131,7 +131,7 @@ public class CrudeCriminal : MonoBehaviour, IEnemy, IKillable, IDamageable<float
         // }
         animator.SetBool("moving", false);
         animator.SetTrigger("shootTrigger");
-        audio.Play(0);
+        audioSource.Play(0);
         GameObject bullet = Instantiate(projectile, shotLocation.position, transform.rotation) as GameObject;
 
         //reduce accuracy and add random shot spread

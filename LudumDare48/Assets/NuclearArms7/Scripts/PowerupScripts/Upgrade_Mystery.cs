@@ -9,7 +9,7 @@ public class Upgrade_Mystery : PowerUp
     private Powerup_Spawner P_Spawner;
 
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
         base.Start();
         if (P_Spawner == null)

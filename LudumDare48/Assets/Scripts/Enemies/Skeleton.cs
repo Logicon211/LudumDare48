@@ -22,7 +22,7 @@ public class Skeleton : MonoBehaviour, IDamageable<float>, IKillable
     public void Damage(float damage)
     {
         health -= damage;
-        Debug.log("This bitch took " + damage + " and now has " + health);
+        Debug.Log("This bitch took " + damage + " and now has " + health);
     }
 
     public void Kill()

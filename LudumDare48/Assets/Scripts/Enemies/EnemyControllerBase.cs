@@ -12,11 +12,11 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
     public string attackScriptName;
     public GameObject target;
 
-    Transform targetTransform;
-    Animator animator;
     float currentHealth;
     float currentAttackCooldown = 0f;
 
+    Transform targetTransform;
+    Animator animator;
     IAttack<Animator, GameObject> attack;
 
     public bool testKill = false;
@@ -66,6 +66,10 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
 
     public void Kill()
     {
-        Destroy(gameObject);
+        animator.SetTrigger("kill");
+        NavMovement nav = GetComponent<NavMovement>();
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (nav != null) nav.Stop();
+        if (rb != null) rb.velocity = Vector3.zero;
     }
 }

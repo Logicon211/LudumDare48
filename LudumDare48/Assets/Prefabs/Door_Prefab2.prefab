@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5254543222239173956}
   - component: {fileID: 5254543222239173957}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DoorScript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

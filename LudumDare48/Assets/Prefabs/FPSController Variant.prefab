@@ -449,6 +449,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5675309938013842368}
     m_Modifications:
+    - target: {fileID: 2766118048700103378, guid: 382258c58c0ab0e41bab206ed6377a97,
+        type: 3}
+      propertyPath: enemyHit
+      value: 
+      objectReference: {fileID: 100006, guid: 2e7e92bc7175b744ea40878dedfa79e4, type: 3}
+    - target: {fileID: 2766118048700103378, guid: 382258c58c0ab0e41bab206ed6377a97,
+        type: 3}
+      propertyPath: otherHit
+      value: 
+      objectReference: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}
+    - target: {fileID: 2766118048700103378, guid: 382258c58c0ab0e41bab206ed6377a97,
+        type: 3}
+      propertyPath: layermask.m_Bits
+      value: 64823
+      objectReference: {fileID: 0}
     - target: {fileID: 2766118048700103382, guid: 382258c58c0ab0e41bab206ed6377a97,
         type: 3}
       propertyPath: m_PlayOnAwake

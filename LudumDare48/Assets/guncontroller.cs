@@ -20,6 +20,8 @@ public class guncontroller : MonoBehaviour {
     private Camera playerCamera;
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
     public LayerMask layermask;
+    public GameObject enemyHit;
+    public GameObject otherHit;
 
 
     // Start is called before the first frame update
@@ -58,6 +60,7 @@ public class guncontroller : MonoBehaviour {
                 {
                     hit.rigidbody.AddForce(-hit.normal * hitForce);
                 }
+                Instantiate(enemyHit, hit.point, Quaternion.identity);
             }
         
             else

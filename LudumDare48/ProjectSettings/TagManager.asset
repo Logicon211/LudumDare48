@@ -12,6 +12,11 @@ TagManager:
   - Health Bar
   - Cooldown Bar
   - RadiationEffect
+  - Fire
+  - ControlPanel
+  - Nuke
+  - SF_Door
+  - Dialog
   layers:
   - Default
   - TransparentFX
@@ -29,7 +34,7 @@ TagManager:
   - EnemyBullet
   - Obstacle
   - Debris
-  - 
+  - DialogPickup
   - 
   - 
   - 

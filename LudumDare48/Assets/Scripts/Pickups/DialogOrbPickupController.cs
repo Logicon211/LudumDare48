@@ -18,25 +18,26 @@ public class DialogOrbPickupController : MonoBehaviour
     public float bobSpeed = 2.99f;
 
     // Update to set the floating text above the powerup
-    //public string dialog = "Here's some dialog";
+    public string dialog = "Press [E] to pickup";
 
-    //private GameObject floatingText;
+    private GameObject floatingText;
     private float originalY;
-    //private GameObject player;
+    private bool isTextVisible;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         this.originalY = transform.position.y;
-        //player = GameObject.FindGameObjectWithTag("Player");
-        //InitializeFloatingText();
+        player = GameObject.FindGameObjectWithTag("MainCamera");
+        InitializeFloatingText();
     }
 
     // Update is called once per frame
     void Update()
     {
         FloatAnimation();
-        
+        TextFacePlayer(player.transform.position);
     }
 
     // Floating animation
@@ -47,31 +48,33 @@ public class DialogOrbPickupController : MonoBehaviour
             transform.position.z);
     }
 
-    //void InitializeFloatingText()
-    //{
-    //    floatingText = Instantiate(floatingTextPrefab, transform.position + floatingTextOffset, Quaternion.identity, transform);
-    //    TextMesh textMesh = floatingText.GetComponent<TextMesh>();
-    //    textMesh.text = dialog;
-    //    floatingText.SetActive(false);
-    //}
+    void InitializeFloatingText()
+    {
+        floatingText = Instantiate(floatingTextPrefab, transform.position + floatingTextOffset, Quaternion.identity, transform);
+        TextMesh textMesh = floatingText.GetComponent<TextMesh>();
+        textMesh.text = dialog;
+        HideFloatingText();
+    }
 
-    //public void TextFacePlayer(Vector3 playerPos)
-    //{
-    //    floatingText.transform.LookAt(2 * floatingText.transform.position - playerPos);
-    //}
+    void TextFacePlayer(Vector3 playerPos)
+    {
+        if (isTextVisible)
+        {
+            floatingText.transform.LookAt(2 * floatingText.transform.position - playerPos);
+        }
+        
+    }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    floatingText.SetActive(true);
-    //}
+    public void ShowFloatingText()
+    {
+        isTextVisible = true;
+        floatingText.SetActive(true);
+    }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    floatingText.SetActive(false);
-    //}
+    public void HideFloatingText()
+    {
+        isTextVisible = false;
+        floatingText.SetActive(false);
+    }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    TextFacePlayer(player.transform.position);
-    //}
 }

@@ -7,12 +7,18 @@ public class NavMovement : MonoBehaviour
 {
 
     public string targetTag = "Player";
+    public float speed = 10;
 
     public NavMeshAgent agent;
     public GameObject target;
+
+    public Animator animationController;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animationController = GetComponentInChildren<Animator>();
+        agent.speed = speed;
     }
 
     // Update is called once per frame
@@ -23,10 +29,31 @@ public class NavMovement : MonoBehaviour
             GameObject gameObject = GameObject.FindGameObjectWithTag(targetTag);
             if (gameObject != null) target = gameObject;
         }
+        // Updating target position
         if (target != null)
         {
             Transform goal = target.transform;
             agent.destination = goal.position;
         }
+        UpdateAnimation();
     }
+
+    void UpdateAnimation()
+    {
+        if (animationController)
+        {
+            if (IsMoving())
+            {
+                animationController.SetBool("moving", true);
+                animationController.SetFloat("walkMoveSpeed", speed / 2);
+            }
+            else animationController.SetBool("moving", false);
+        }
+    }
+
+    public bool IsMoving()
+    {
+        return agent.velocity != new Vector3(0, 0, 0);
+    }
+
 }

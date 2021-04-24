@@ -101,6 +101,39 @@ public class DialogOrbPickupController : MonoBehaviour
         }
     }
 
+    public void PickupDialogChoice()
+    {
+        int currentScene = GameState.CurrentScene;
+        int choice;
+        switch (choiceType)
+        {
+            case ChoiceType.GOOD:
+                {
+                    choice = 3;
+                    break;
+                }
+            case ChoiceType.OKAY:
+                {
+                    choice = 2;
+                    break;
+                }
+            case ChoiceType.BAD:
+                {
+                    choice = 1;
+                    break;
+                }
+            default:
+                {
+                    choice = 0;
+                    break;
+                }
+
+
+        }
+
+        GameState.UpdateChoice(currentScene, choice);
+    }
+
     public void ShowFloatingText()
     {
         isTextVisible = true;
@@ -111,6 +144,35 @@ public class DialogOrbPickupController : MonoBehaviour
     {
         isTextVisible = false;
         floatingText.SetActive(false);
+    }
+
+    public void SetChoiceType(ChoiceType type)
+    {
+        choiceType = type;
+        InitializeColor();
+    }
+
+    public static ChoiceType GetChoiceTypeFromIndex(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                {
+                    return ChoiceType.BAD;
+                }
+            case 2:
+                {
+                    return ChoiceType.OKAY;
+                }
+            case 3:
+                {
+                    return ChoiceType.GOOD;
+                }
+            default:
+                {
+                    return ChoiceType.BAD;
+                }
+        }
     }
 
 }

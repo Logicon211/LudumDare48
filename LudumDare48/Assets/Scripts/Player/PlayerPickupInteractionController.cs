@@ -9,6 +9,7 @@ public class PlayerPickupInteractionController : MonoBehaviour
     public LayerMask layerMask = new LayerMask();
 
     private DialogOrbPickupController lookingAt;
+    private GameObject lookingAtGameObject;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,14 @@ public class PlayerPickupInteractionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.E) && lookingAt)
+        {
+            PickupDialogOption();
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log(GameState.GetChoice(GameState.CurrentScene));
+        }
     }
 
     private void FixedUpdate()
@@ -32,7 +40,8 @@ public class PlayerPickupInteractionController : MonoBehaviour
         {
             if (!lookingAt)
             {
-                lookingAt = hit.transform.gameObject.GetComponent<DialogOrbPickupController>();
+                lookingAtGameObject = hit.transform.gameObject;
+                lookingAt = lookingAtGameObject.GetComponent<DialogOrbPickupController>();
                 lookingAt.ShowFloatingText();
             }
         }
@@ -42,7 +51,23 @@ public class PlayerPickupInteractionController : MonoBehaviour
             {
                 lookingAt.HideFloatingText();
                 lookingAt = null;
+                lookingAtGameObject = null;
             }
+        }
+    }
+
+    void PickupDialogOption()
+    {
+        int currentChoice = GameState.GetChoice(GameState.CurrentScene);
+        lookingAt.PickupDialogChoice();
+        Destroy(lookingAtGameObject);
+        lookingAt = null;
+        lookingAtGameObject = null;
+        //TODO: Tiny explosion effect?
+
+        if (currentChoice != 0)
+        {
+            //TODO Spawn old choice
         }
     }
 }

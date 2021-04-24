@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyBase: MonoBehaviour, IDamageable<float>, IKillable
 {
-    public float health = 100;
-    public float speed = 1;
+    public float health = 100f;
+    public float speed = 1f;
+    public float attackRange = 5f;
 
     public string targetTag = "Player";
     public GameObject target;
@@ -33,6 +34,11 @@ public class EnemyBase: MonoBehaviour, IDamageable<float>, IKillable
                 targetTransform = target.GetComponent<Transform>();
             }
         }
+    }
+
+    void Attack()
+    {
+
     }
 
     public void Damage(float damage)

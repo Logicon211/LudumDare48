@@ -8,6 +8,8 @@ public class PlayerPickupInteractionController : MonoBehaviour
     public float interactRange = 3f;
     public LayerMask layerMask = new LayerMask();
 
+    public GameObject dialogPickupPrefab;
+
     private DialogOrbPickupController lookingAt;
     private GameObject lookingAtGameObject;
 
@@ -67,7 +69,8 @@ public class PlayerPickupInteractionController : MonoBehaviour
 
         if (currentChoice != 0)
         {
-            //TODO Spawn old choice
+            GameObject oldChoice = Instantiate(dialogPickupPrefab, transform.parent.position + (transform.parent.forward * 3f), Quaternion.identity);
+            oldChoice.GetComponent<DialogOrbPickupController>().SetChoiceType(DialogOrbPickupController.GetChoiceTypeFromIndex(currentChoice));
         }
     }
 }

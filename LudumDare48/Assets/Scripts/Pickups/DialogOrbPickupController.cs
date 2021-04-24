@@ -15,10 +15,10 @@ public class DialogOrbPickupController : MonoBehaviour
 
     public ChoiceType choiceType = ChoiceType.BAD;
 
-    // How high the pickup bobs
-    public float bobDistance = 0.38f;
-    // How fast the pickup bobs
-    public float bobSpeed = 2.99f;
+    public float bobDistance = 0.38f, bobSpeed = 2.99f;
+    public float rotationSpeed = 50f;
+
+    public bool animationsEnabled = true;
 
     // How far above powerup floating text should be
     public Vector3 floatingTextOffset = new Vector3(0f, 1f, 0f);
@@ -45,7 +45,10 @@ public class DialogOrbPickupController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FloatAnimation();
+        if (animationsEnabled)
+        {
+            FloatAnimation();
+        }
         TextFacePlayer(camera.transform.position);
     }
 
@@ -54,6 +57,7 @@ public class DialogOrbPickupController : MonoBehaviour
         transform.position = new Vector3(transform.position.x,
             originalY + ((float)Math.Sin(bobSpeed * Time.time) * bobDistance),
             transform.position.z);
+        transform.Rotate(0f, Time.deltaTime * rotationSpeed, 0f);
     }
 
     void InitializeFloatingText()

@@ -9,6 +9,8 @@ public class NavMovement : MonoBehaviour
     public string targetTag = "Player";
     public float speed = 10;
 
+    bool stopped = false;
+
     public NavMeshAgent agent;
     public GameObject target;
 
@@ -30,7 +32,7 @@ public class NavMovement : MonoBehaviour
             if (gameObject != null) target = gameObject;
         }
         // Updating target position
-        if (target != null)
+        if (target != null && !stopped)
         {
             Transform goal = target.transform;
             agent.destination = goal.position;
@@ -49,6 +51,14 @@ public class NavMovement : MonoBehaviour
             }
             else animationController.SetBool("moving", false);
         }
+    }
+
+    public void Stop()
+    {
+        agent.speed = 0;
+        agent.destination = gameObject.transform.position;
+        stopped = true;
+
     }
 
     public bool IsMoving()

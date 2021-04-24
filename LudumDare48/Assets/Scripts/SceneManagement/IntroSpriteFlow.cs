@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class IntroSpriteFlow : MonoBehaviour
 {
 	public float fadeSpeed = 1.5f;          // Speed that the screen fades to and from black.
-	public Sprite[] sprite;
+	public Sprite[] slides;
+	public AudioClip[] voiceLines;
 	
 	private bool sceneStarting = true;      // Whether or not the scene is still fading in.
 	private int sceneEnding = 0;
@@ -14,6 +15,8 @@ public class IntroSpriteFlow : MonoBehaviour
 
 	public AudioSource audioSource;
 	public AudioClip jingle;
+
+	public AudioSource voiceAudioSource;
 
 	public int levelToLoadIndex;
 	public int slideToStopMusicAndJingle = 0;
@@ -43,13 +46,19 @@ public class IntroSpriteFlow : MonoBehaviour
 		}
 
 		if (Input.anyKeyDown) {//.GetKeyDown(KeyCode.RightArrow)) {
-			if(sceneEnding < sprite.Length){
+			// TODO: stop voice lines
+			voiceAudioSource.Stop();
+			if(sceneEnding < slides.Length){
 				sceneEnding++;
 				//Stop music and play jingle;
 				if (sceneEnding == slideToStopMusicAndJingle && audioSource != null) {
 					Debug.Log ("JINGLE");
 					audioSource.Stop();
 					audioSource.PlayOneShot (jingle);
+				}
+
+				if(voiceLines.Length > sceneEnding && voiceLines[sceneEnding] != null) {
+					voiceAudioSource.PlayOneShot(voiceLines[sceneEnding]);
 				}
 			}
 			//Application.LoadLevel();
@@ -62,10 +71,10 @@ public class IntroSpriteFlow : MonoBehaviour
 		}
 
 		//Sprite image navigation
-		if (sceneEnding == sprite.Length) {
+		if (sceneEnding == slides.Length) {
 			EndScene ();
 		} else {
-			spriteRenderer.sprite = sprite[sceneEnding];
+			spriteRenderer.sprite = slides[sceneEnding];
 		}
 
 	}
@@ -115,6 +124,9 @@ public class IntroSpriteFlow : MonoBehaviour
 			// The scene is no longer starting.
 			sceneStarting = false;
 		}
+
+		// TODO: check and play audio from first slide
+
 	}
 	
 	

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAttack<T>
+public interface IAttack<A, T>
 {
-    void Attack(T gameObject, T targetObject);
+    void Attack(A animator, T targetObject);
 
     float GetCooldown();
 }

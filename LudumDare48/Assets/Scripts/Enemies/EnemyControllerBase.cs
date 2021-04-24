@@ -13,10 +13,11 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
     public GameObject target;
 
     Transform targetTransform;
+    Animator animator;
     float currentHealth;
     float currentAttackCooldown = 0f;
 
-    IAttack<GameObject> attack;
+    IAttack<Animator, GameObject> attack;
 
     public bool testKill = false;
     public bool testDamage = false;
@@ -24,7 +25,8 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
     void Start()
     {
         currentHealth = health;
-        attack = GetComponent<IAttack<GameObject>>();
+        attack = GetComponent<IAttack<Animator, GameObject>>();
+        animator = GetComponentInChildren<Animator>();
         if (attack != null) currentAttackCooldown = attack.GetCooldown();
     }
 
@@ -51,7 +53,7 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
         if (Vector3.Distance(transform.position, targetTransform.position) >= attackRange) return;
         if (attack != null && currentAttackCooldown <= 0f)
         {
-            attack.Attack(gameObject, target);
+            attack.Attack(animator, target);
             currentAttackCooldown = attack.GetCooldown();
         }
     }

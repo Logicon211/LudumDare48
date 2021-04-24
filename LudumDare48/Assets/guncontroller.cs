@@ -19,6 +19,7 @@ public class guncontroller : MonoBehaviour {
     public Transform bulletSpawnPoint;
     private Camera playerCamera;
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
+    public LayerMask layermask;
 
 
     // Start is called before the first frame update
@@ -42,7 +43,7 @@ public class guncontroller : MonoBehaviour {
             RaycastHit hit;
 
             gunshottrail.SetPosition(0, bulletSpawnPoint.position);
-            if (Physics.Raycast(rayOrigin, playerCamera.transform.forward, out hit, 200f))
+            if (Physics.Raycast(rayOrigin, playerCamera.transform.forward, out hit, 200f, layermask))
             {
                 gunshottrail.SetPosition(1, hit.point);
 

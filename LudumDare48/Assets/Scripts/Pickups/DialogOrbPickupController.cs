@@ -6,16 +6,24 @@ using UnityEngine;
 public class DialogOrbPickupController : MonoBehaviour
 {
 
-    // How high the powerup bobs
-    public float bobStrength = 0.38f;
+    public enum ChoiceType 
+    {
+        GOOD,
+        OKAY,
+        BAD
+    }
+
+    public ChoiceType choiceType = ChoiceType.BAD;
+
+    // How high the pickup bobs
+    public float bobDistance = 0.38f;
+    // How fast the pickup bobs
+    public float bobSpeed = 2.99f;
 
     // How far above powerup floating text should be
     public Vector3 floatingTextOffset = new Vector3(0f, 1f, 0f);
 
     public GameObject floatingTextPrefab;
-
-    // How fast the powerup bobs
-    public float bobSpeed = 2.99f;
 
     // Update to set the floating text above the powerup
     public string dialog = "Press [E] to pickup";
@@ -23,28 +31,28 @@ public class DialogOrbPickupController : MonoBehaviour
     private GameObject floatingText;
     private float originalY;
     private bool isTextVisible;
-    private GameObject player;
+    private GameObject camera;
 
     // Start is called before the first frame update
     void Start()
     {
         this.originalY = transform.position.y;
-        player = GameObject.FindGameObjectWithTag("MainCamera");
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
         InitializeFloatingText();
+        InitializeColor();
     }
 
     // Update is called once per frame
     void Update()
     {
         FloatAnimation();
-        TextFacePlayer(player.transform.position);
+        TextFacePlayer(camera.transform.position);
     }
 
-    // Floating animation
     void FloatAnimation()
     {
         transform.position = new Vector3(transform.position.x,
-            originalY + ((float)Math.Sin(bobSpeed * Time.time) * bobStrength),
+            originalY + ((float)Math.Sin(bobSpeed * Time.time) * bobDistance),
             transform.position.z);
     }
 
@@ -63,6 +71,34 @@ public class DialogOrbPickupController : MonoBehaviour
             floatingText.transform.LookAt(2 * floatingText.transform.position - playerPos);
         }
         
+    }
+
+    void InitializeColor()
+    {
+        switch (choiceType)
+        {
+            case ChoiceType.GOOD:
+            {
+                gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+                break;
+            }
+            case ChoiceType.OKAY:
+            {
+                gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
+                break;
+            }
+            case ChoiceType.BAD:
+            {
+                gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+                break;
+            }
+            default:
+            {
+                break;
+            }
+            
+
+        }
     }
 
     public void ShowFloatingText()

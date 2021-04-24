@@ -35,11 +35,6 @@ public class PlayerPickupInteractionController : MonoBehaviour
                 lookingAt = hit.transform.gameObject.GetComponent<DialogOrbPickupController>();
                 lookingAt.ShowFloatingText();
             }
-            //else if (lookingAt && "Dialog" != hit.transform.tag)
-            //{
-            //    lookingAt.HideFloatingText();
-            //    lookingAt = null;
-            //}
         }
         else
         {

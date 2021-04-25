@@ -7,6 +7,7 @@ public class RoomManager : MonoBehaviour
 {
     public DoorScript door;
     public float initialTime = 10f;
+    public BackgroundSounds backgroundSounds;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,9 @@ public class RoomManager : MonoBehaviour
 
     public void OpenDoor() {
         door.OpenDoor();
+        if (backgroundSounds != null) {
+            backgroundSounds.enabled = false;
+        }
     }
 
     public float getInitialTime() {

@@ -67,7 +67,7 @@ public class PlayerPickupInteractionController : MonoBehaviour
         lookingAtGameObject = null;
         //TODO: Tiny explosion effect?
 
-        if (currentChoice != 0)
+        if (currentChoice != 3)
         {
             GameObject oldChoice = Instantiate(dialogPickupPrefab, transform.parent.position + (transform.parent.forward * 3f), Quaternion.identity);
             oldChoice.GetComponent<DialogOrbPickupController>().SetChoiceType(DialogOrbPickupController.GetChoiceTypeFromIndex(currentChoice));

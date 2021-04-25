@@ -113,22 +113,22 @@ public class DialogOrbPickupController : MonoBehaviour
         {
             case ChoiceType.GOOD:
                 {
-                    choice = 3;
+                    choice = 2;
                     break;
                 }
             case ChoiceType.OKAY:
                 {
-                    choice = 2;
+                    choice = 1;
                     break;
                 }
             case ChoiceType.BAD:
                 {
-                    choice = 1;
+                    choice = 0;
                     break;
                 }
             default:
                 {
-                    choice = 0;
+                    choice = 3;
                     break;
                 }
 
@@ -160,15 +160,15 @@ public class DialogOrbPickupController : MonoBehaviour
     {
         switch (index)
         {
-            case 1:
+            case 0:
                 {
                     return ChoiceType.BAD;
                 }
-            case 2:
+            case 1:
                 {
                     return ChoiceType.OKAY;
                 }
-            case 3:
+            case 2:
                 {
                     return ChoiceType.GOOD;
                 }

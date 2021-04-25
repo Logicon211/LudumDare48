@@ -9,8 +9,8 @@ public static class GameState
 
     private static int currentScene = 0;
 
-    // 0 = No Choice Chosen, 1 = Bad option, 2 = Okay option, 3 = Good option
-    private static int[] choices = new int[NUMBER_OF_SCENES];
+    // 0 = Bad option, 1 = Okay option, 2 = Good option, 3 = No Option Chosen
+    private static int[] choices = new int[] {3, 3, 3, 3, 3, 3, 3};
 
     public static int CurrentScene
     {

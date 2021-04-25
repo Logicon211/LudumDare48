@@ -6,7 +6,9 @@ public class DestroyableItemBase : MonoBehaviour, IDamageable<float>, IKillable
 {
 
     public float health;
+
     float currentHealth;
+    RandomStuffSpawner spawner;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,15 @@ public class DestroyableItemBase : MonoBehaviour, IDamageable<float>, IKillable
 
     public void Kill()
     {
+        if (spawner != null)
+        {
+            spawner.UpdateList(gameObject);
+        }
         Destroy(gameObject);
+    }
+
+    public void SetSpawner(RandomStuffSpawner spawner)
+    {
+        this.spawner = spawner;
     }
 }

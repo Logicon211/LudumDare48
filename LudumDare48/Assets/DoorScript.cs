@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorScript : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class DoorScript : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         Debug.Log("HIT");
         if (other.CompareTag("Player") && isDoorOpen) {
-            //TODO: Load next room with GameManager
+            SceneManager.LoadScene(GameState.CurrentScene + 1);
         }
 
     }

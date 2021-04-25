@@ -34,7 +34,6 @@ public class EnemySpawnController : MonoBehaviour {
 			currentTime -= Time.deltaTime;
 			if(currentTime <= 0) {
 				currentTime = spawnInterval;
-				Debug.Log("ABOUT TO SPAWN ENEMY");
 				// Quaternion rotation = Quaternion.Euler (0f, 0f, 0f/*Random.Range (0f, 360f)*/);
 				// Instantiate (enemy, testSpawnPosition.position, rotation);
 				SpawnAtRandomLocation(enemy);
@@ -51,7 +50,6 @@ public class EnemySpawnController : MonoBehaviour {
 
 		Vector3 position = new Vector3 (xPos, yPos, zPos);
 		Quaternion rotation = Quaternion.Euler (0f, 0f, 0f/*Random.Range (0f, 360f)*/);
-		Debug.Log("BEFORE INSTANTIATE");
 		Instantiate (enemyToSpawn, position, rotation);
 	}
 

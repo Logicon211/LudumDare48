@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class IntroSpriteFlow : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class IntroSpriteFlow : MonoBehaviour
 	public AudioClip[] voiceLines;
 	
 	private bool sceneStarting = true;      // Whether or not the scene is still fading in.
-	private int sceneEnding = 0;
+	private int slideIndex = 0;
 	private SpriteRenderer spriteRenderer;
 
 	public AudioSource audioSource;
@@ -25,12 +26,51 @@ public class IntroSpriteFlow : MonoBehaviour
 
 	public GameObject blackOutSquare;
 
+	public bool choiceSlidesEnabled;
+
+	private Sprite[][] choiceSpriteArray = new Sprite[3][];
+	private AudioClip[][] choiceVoiceArray  = new AudioClip[3][];
+
+	public Sprite[] spriteChoice0;
+	public Sprite[] spriteChoice1;
+	public Sprite[] spriteChoice2;
+
+	public AudioClip[] voiceChoice0;
+	public AudioClip[] voiceChoice1;
+	public AudioClip[] voiceChoice2;
+
+	// private bool runningThroughChoiceSlide = false;
+	private int currentChoice;
+
 	void Start ()
 	{
 		//Screen.SetResolution (1400, 900, true);
 		spriteRenderer = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject
 		if (GameObject.FindWithTag("GameController") != null)
 			gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+
+		if (choiceSlidesEnabled) {
+			choiceSpriteArray[0] = spriteChoice0;
+			choiceSpriteArray[1] = spriteChoice1;
+			choiceSpriteArray[2] = spriteChoice2;
+			choiceVoiceArray[0] = voiceChoice0;
+			choiceVoiceArray[1] = voiceChoice1;
+			choiceVoiceArray[2] = voiceChoice2;
+			// TODO: Check for choice to influence current slide choice:
+			currentChoice = 1;
+
+			// runningThroughChoiceSlide = true;
+			spriteRenderer.sprite = choiceSpriteArray[currentChoice][slideIndex];
+			if(choiceVoiceArray[currentChoice].Length > slideIndex && choiceVoiceArray[currentChoice][slideIndex] != null) {
+				voiceAudioSource.PlayOneShot(choiceVoiceArray[currentChoice][slideIndex]);
+			}
+		} else {
+			if(voiceLines.Length > slideIndex && voiceLines[slideIndex] != null) {
+				voiceAudioSource.PlayOneShot(voiceLines[slideIndex]);
+			}
+		}
+		
+
 	}
 
 	void Awake ()
@@ -42,23 +82,35 @@ public class IntroSpriteFlow : MonoBehaviour
 	void Update ()
 	{
 		foreach (Touch touch in Input.touches) {
-			sceneEnding++;
+			slideIndex++;
 		}
 
 		if (Input.anyKeyDown) {//.GetKeyDown(KeyCode.RightArrow)) {
-			// TODO: stop voice lines
 			voiceAudioSource.Stop();
-			if(sceneEnding < slides.Length){
-				sceneEnding++;
-				//Stop music and play jingle;
-				if (sceneEnding == slideToStopMusicAndJingle && audioSource != null) {
-					Debug.Log ("JINGLE");
-					audioSource.Stop();
-					audioSource.PlayOneShot (jingle);
+			if(choiceSlidesEnabled) {
+				slideIndex++;
+				if(slideIndex < choiceSpriteArray[currentChoice].Length){
+					if(choiceVoiceArray[currentChoice].Length > slideIndex && choiceVoiceArray[currentChoice][slideIndex] != null) {
+						voiceAudioSource.PlayOneShot(choiceVoiceArray[currentChoice][slideIndex]);
+					}
 				}
+				if(slideIndex >= choiceSpriteArray[currentChoice].Length) {
+					choiceSlidesEnabled = false;
+					slideIndex = 0;
+				}
+			} else {
+				if(slideIndex < slides.Length){
+					slideIndex++;
+					//Stop music and play jingle;
+					if (slideIndex == slideToStopMusicAndJingle && audioSource != null) {
+						Debug.Log ("JINGLE");
+						audioSource.Stop();
+						audioSource.PlayOneShot (jingle);
+					}
 
-				if(voiceLines.Length > sceneEnding && voiceLines[sceneEnding] != null) {
-					voiceAudioSource.PlayOneShot(voiceLines[sceneEnding]);
+					if(voiceLines.Length > slideIndex && voiceLines[slideIndex] != null) {
+						voiceAudioSource.PlayOneShot(voiceLines[slideIndex]);
+					}
 				}
 			}
 			//Application.LoadLevel();
@@ -71,10 +123,14 @@ public class IntroSpriteFlow : MonoBehaviour
 		}
 
 		//Sprite image navigation
-		if (sceneEnding == slides.Length) {
-			EndScene ();
+		if (choiceSlidesEnabled) {
+			spriteRenderer.sprite = choiceSpriteArray[currentChoice][slideIndex];
 		} else {
-			spriteRenderer.sprite = slides[sceneEnding];
+			if (slideIndex == slides.Length) {
+				EndScene ();
+			} else {
+				spriteRenderer.sprite = slides[slideIndex];
+			}
 		}
 
 	}

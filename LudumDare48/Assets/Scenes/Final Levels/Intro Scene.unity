@@ -218,6 +218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
+      propertyPath: choiceSlidesEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
       propertyPath: slides.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 3df39b6beea378a4e929e935c183bc77,
@@ -244,7 +249,7 @@ PrefabInstance:
         type: 3}
       propertyPath: slides.Array.data[4]
       value: 
-      objectReference: {fileID: 21300000, guid: 34878e3fb1d42e74c87a826448eb0e43,
+      objectReference: {fileID: 21300000, guid: 5214ab6d7603cfa4ab581d8e5b252917,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -1626,6 +1631,41 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
+      propertyPath: voiceChoice0.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice1.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice2.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice0.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice1.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice2.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceLines.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
       propertyPath: voiceLines.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: aba49a42d1b83f743a8339dcf55736f1, type: 3}
@@ -1654,6 +1694,100 @@ PrefabInstance:
       propertyPath: slideToStopMusicAndJingle
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice0.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ddf55f1333c8a1b42bab9b7f940303f4, type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice1.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d4396d748e7d1c545b421af7f4d68c37, type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice1.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8500775d688a6c84a9f66dab0748c07c, type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice1.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e6d7472c3a809742a07a790d9915a48, type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice2.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice2.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 21165a6c07c88fa4bb9d787ec092c50a, type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice2.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5cdeacb8edab6a345beea784b669d1e7, type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice2.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 188d2eb44b881944e811fbd691153cb4, type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice0.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: cd222699855205c419f46bf531833421,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice0.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: bca87a5b80828d140b283899b4ad7b0f,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice1.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: d3901d7b764e75a49b56111671941423,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice1.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: af9ce95808d7dd54890d08282d3ccbcd,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice1.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10654b84b641a8e49a5433f15fc68a83,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice2.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: d4b97f9a92866d84f97e1604c8732141,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice2.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 024bf46c6e324e0459b901ee75ab06ea,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice2.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 300022dfd81f28e478bae77f33ba29cd,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: spriteChoice2.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fa9919c6c461b341b247e70a06104b7,
+        type: 3}
     - target: {fileID: 131114130065988728, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: m_Color.b

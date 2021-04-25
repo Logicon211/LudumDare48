@@ -58,6 +58,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e88afbef79e76a4fae4ffec6b79c95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnLocations: []
+  spawnLocations:
+  - {fileID: 0}
+  - {fileID: 0}
   spawnInterval: 10
+  currentTime: 50
   enemy: {fileID: 0}
+  testSpawnPosition: {fileID: 0}

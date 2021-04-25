@@ -25,6 +25,12 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
     public bool testKill = false;
     public bool testDamage = false;
 
+    private bool kinematic = false;
+    private float kinematicCoolDown = 1f;
+    private float currentKinematicTime = 0f;
+
+    private Rigidbody rigidbody;
+
     void Start()
     {
         currentHealth = health;
@@ -32,6 +38,7 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
         animator = GetComponentInChildren<Animator>();
         if (animator == null) animator = GetComponent<Animator>();
         if (attack != null) currentAttackCooldown = attack.GetCooldown();
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -50,6 +57,14 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
 
     void FixedUpdate()
     {
+        currentKinematicTime -= Time.deltaTime;
+        if (kinematic && currentKinematicTime <= 0) {
+            rigidbody.isKinematic = true;
+            kinematic = false;
+            currentKinematicTime = kinematicCoolDown;
+        } else if(!kinematic && currentKinematicTime <= 0) {
+            rigidbody.isKinematic = false;
+        }
         // update values
         if (currentAttackCooldown > 0f) currentAttackCooldown -= Time.deltaTime;
     }
@@ -67,8 +82,12 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
 
     public void Damage(float damage)
     {
+        rigidbody.isKinematic = false;
         currentHealth -= damage;
         if (currentHealth <= 0f) Kill();
+        currentKinematicTime = kinematicCoolDown;
+        kinematic = true;
+        // rigidbody.isKinematic(true);
     }
 
     public void Kill()

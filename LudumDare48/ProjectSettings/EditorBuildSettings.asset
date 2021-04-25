@@ -15,28 +15,28 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Levels/VictoryScene.unity
     guid: 5bc1ed12e7f08d14fa251f33f6fe273c
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 1.unity
+    path: Assets/Scenes/Final Levels/Rooms/Room 1.unity
     guid: 5df9bda48da93764d9547a1c7da81211
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 2.unity
+    path: Assets/Scenes/Final Levels/Rooms/Room 2.unity
     guid: e43da67c25b01ab45a28d8fa14961acf
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 3.unity
+    path: Assets/Scenes/Final Levels/Rooms/Room 3.unity
     guid: 75d8cb0d8340edf4a8afce9aa278283b
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 4.unity
+    path: Assets/Scenes/Final Levels/Rooms/Room 4.unity
     guid: a522f77ef2a2aea41916535c050fef25
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 5.unity
+    path: Assets/Scenes/Final Levels/Rooms/Room 5.unity
     guid: 39a71b508d3444749837ca515f4fff02
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 6.unity
+    path: Assets/Scenes/Final Levels/Rooms/Room 6.unity
     guid: 71b9caf0a883cf44393ff38ea9a7c3d5
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 7.unity
+    path: Assets/Scenes/Final Levels/Rooms/Room 7.unity
     guid: 143657bec9e809d4098a1d72025e8f69
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 8.unity
+    path: Assets/Scenes/Final Levels/Rooms/Room 8.unity
     guid: 4a36d1e3f62b8464bb55be575ce964ef
   - enabled: 1
     path: Assets/Scenes/Final Levels/GameOverScreen.unity

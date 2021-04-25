@@ -46,4 +46,9 @@ public static class GameState
         choices[sceneNumber] = choice;
     }
 
+    public static bool CanOpenDoor()
+    {
+        return choices[currentScene] != 3;
+    }
+
 }

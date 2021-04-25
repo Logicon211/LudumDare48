@@ -106,10 +106,8 @@ public class SceneFadeInOut : MonoBehaviour
 			//PersistentGameObject PGO = GameObject.FindGameObjectWithTag ("PersistentObject").GetComponent<PersistentGameObject> ();
 			//PersistentGameObject.// (player.transform.Find ("RifleWeapon").gameObject.GetComponent<TrackMouse> ().weapon);
 			if(loadCheckpointedScene) {
-				Debug.Log("LOADING CURRENT SCENE NUMBER: " + GameState.CurrentScene);
 				LoadingScreenManager.LoadScene (GameState.CurrentScene);
 			} else {
-				Debug.Log("NOT LOADING CURRENT " + GameState.CurrentScene);
 				LoadingScreenManager.LoadScene (sceneToLoadIndex);
 			}
 		}

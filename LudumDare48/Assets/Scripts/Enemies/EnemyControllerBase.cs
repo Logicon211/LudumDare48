@@ -82,6 +82,7 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
 
     public void Damage(float damage)
     {
+        rigidbody.isKinematic = false;
         currentHealth -= damage;
         if (currentHealth <= 0f) Kill();
         currentKinematicTime = kinematicCoolDown;

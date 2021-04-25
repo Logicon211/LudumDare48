@@ -338,6 +338,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 986a8fb4234cd8f4e995aa9d70e270dd, type: 3}
+--- !u!114 &374889442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1692742277174152153, guid: 986a8fb4234cd8f4e995aa9d70e270dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 374889441}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26bbb388a581dd4b927035abe360d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &607667912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -419,6 +431,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3034619449736581321, guid: addf303997d83f94f961cd46c9bb9b91,
+        type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 374889442}
     - target: {fileID: 3034619449736581326, guid: addf303997d83f94f961cd46c9bb9b91,
         type: 3}
       propertyPath: m_RootOrder

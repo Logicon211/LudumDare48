@@ -43,6 +43,8 @@ public class IntroSpriteFlow : MonoBehaviour
 	// private bool runningThroughChoiceSlide = false;
 	private int currentChoice;
 
+	public float initialInputLock = 0.5f;
+
 	void Start ()
 	{
 		GameState.CurrentScene = SceneManager.GetActiveScene().buildIndex;
@@ -58,7 +60,7 @@ public class IntroSpriteFlow : MonoBehaviour
 			choiceVoiceArray[0] = voiceChoice0;
 			choiceVoiceArray[1] = voiceChoice1;
 			choiceVoiceArray[2] = voiceChoice2;
-			
+
 			currentChoice = GameState.GetChoice(GameState.CurrentScene - 1);
 
 			// runningThroughChoiceSlide = true;
@@ -83,11 +85,13 @@ public class IntroSpriteFlow : MonoBehaviour
 	
 	void Update ()
 	{
+		initialInputLock -= Time.deltaTime;
+
 		foreach (Touch touch in Input.touches) {
 			slideIndex++;
 		}
 
-		if (Input.anyKeyDown) {//.GetKeyDown(KeyCode.RightArrow)) {
+		if (Input.anyKeyDown && initialInputLock <= 0) {//.GetKeyDown(KeyCode.RightArrow)) {
 			voiceAudioSource.Stop();
 			if(choiceSlidesEnabled) {
 				slideIndex++;

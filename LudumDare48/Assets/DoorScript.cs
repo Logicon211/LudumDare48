@@ -24,7 +24,6 @@ public class DoorScript : MonoBehaviour
 
     public void OpenDoor() {
         if(!isDoorOpen) {
-            Debug.Log("Trigger was player");
             door.GetComponent<Animation>().Play("open");
             lightSource.enabled = true;
             isDoorOpen = true;
@@ -32,7 +31,6 @@ public class DoorScript : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("HIT");
         if (other.CompareTag("Player") && isDoorOpen) {
             SceneManager.LoadScene(GameState.CurrentScene + 1);
         }

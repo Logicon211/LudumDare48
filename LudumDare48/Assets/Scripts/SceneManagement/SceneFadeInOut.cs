@@ -9,6 +9,9 @@ public class SceneFadeInOut : MonoBehaviour
 	private bool sceneStarting = true;      // Whether or not the scene is still fading in.
 	private bool sceneEnding = false;
 	public int sceneToLoadIndex;
+	public int waitingTime = 3;
+
+	public bool loadCheckpointedScene;
 
 	void Awake ()
 	{
@@ -88,7 +91,7 @@ public class SceneFadeInOut : MonoBehaviour
 	//	}
 
 	IEnumerator EndScene() {			
-		yield return new  WaitForSeconds(3);  // or however long you want it to wait
+		yield return new  WaitForSeconds(waitingTime);  // or however long you want it to wait
 
 		// Make sure the texture is enabled.
 		GetComponent<UnityEngine.UI.Image>().enabled = true;
@@ -102,7 +105,13 @@ public class SceneFadeInOut : MonoBehaviour
 			//Application.LoadLevel(sceneToLoad);
 			//PersistentGameObject PGO = GameObject.FindGameObjectWithTag ("PersistentObject").GetComponent<PersistentGameObject> ();
 			//PersistentGameObject.// (player.transform.Find ("RifleWeapon").gameObject.GetComponent<TrackMouse> ().weapon);
-			LoadingScreenManager.LoadScene (sceneToLoadIndex);
+			if(loadCheckpointedScene) {
+				Debug.Log("LOADING CURRENT SCENE NUMBER: " + GameState.CurrentScene);
+				LoadingScreenManager.LoadScene (GameState.CurrentScene);
+			} else {
+				Debug.Log("NOT LOADING CURRENT " + GameState.CurrentScene);
+				LoadingScreenManager.LoadScene (sceneToLoadIndex);
+			}
 		}
 	}
 }

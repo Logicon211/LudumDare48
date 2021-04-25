@@ -447,8 +447,16 @@ PrefabInstance:
       value: FADER
       objectReference: {fileID: 0}
     - target: {fileID: 11448138, guid: b17e8ead49070cd449a13e10aebd706c, type: 3}
+      propertyPath: waitingTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448138, guid: b17e8ead49070cd449a13e10aebd706c, type: 3}
       propertyPath: sceneToLoadIndex
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448138, guid: b17e8ead49070cd449a13e10aebd706c, type: 3}
+      propertyPath: loadCheckpointedScene
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7041396679639650988, guid: b17e8ead49070cd449a13e10aebd706c,
         type: 3}
@@ -664,6 +672,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

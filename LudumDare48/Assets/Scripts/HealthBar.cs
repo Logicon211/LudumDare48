@@ -14,6 +14,8 @@ public class HealthBar : MonoBehaviour
 
     private GameObject healthLossPreviewGreen;
     private SpriteRenderer healthLossPreviewSpriteRendererGreen;
+
+    public Player player;
     
     // Start is called before the first frame update
     void Start()

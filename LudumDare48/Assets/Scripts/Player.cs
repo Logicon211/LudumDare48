@@ -6,17 +6,20 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour, IDamageable<float>
 {
     private RoomManager roomManager;
+    private AudioSource audioSource;
 
     public float time;
     public float initialTime;
 
     public HealthBar healthbar;
 
+    public AudioClip hurtSound;
+
     // Start is called before the first frame update
     void Start()
     {
         roomManager = GameObject.FindWithTag("RoomManager").GetComponent<RoomManager>();
-
+        audioSource = GetComponent<AudioSource>();
         initialTime = roomManager.getInitialTime();
         time = roomManager.getInitialTime();
     }
@@ -44,6 +47,7 @@ public class Player : MonoBehaviour, IDamageable<float>
 
     public void Damage(float damageTaken)
     {
+        audioSource.PlayOneShot(hurtSound);
         time -= damageTaken;
     }
 }

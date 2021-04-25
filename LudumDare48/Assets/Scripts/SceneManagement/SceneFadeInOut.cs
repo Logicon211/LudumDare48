@@ -17,6 +17,11 @@ public class SceneFadeInOut : MonoBehaviour
 	{
 		// Set the texture so that it is the the size of the screen and covers it.
 		// GetComponent<UnityEngine.UI.Image>().pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
+		GameObject[] objs = GameObject.FindGameObjectsWithTag("GlobalMusic");
+
+		foreach(var music in objs) {
+			Destroy(music);
+		}
 	}
 
 

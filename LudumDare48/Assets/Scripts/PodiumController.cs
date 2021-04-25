@@ -33,7 +33,7 @@ public class PodiumController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        TextFacePlayer(player.transform.position);
     }
 
     void InitializeFloatingText()

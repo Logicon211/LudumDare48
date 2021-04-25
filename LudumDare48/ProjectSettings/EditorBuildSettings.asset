@@ -18,23 +18,44 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Levels/Rooms/Room 1.unity
     guid: 5df9bda48da93764d9547a1c7da81211
   - enabled: 1
+    path: Assets/Scenes/Final Levels/InbetweenRooms/Between1and2.unity
+    guid: 10c45493c58e1c34e81cc85efd50929f
+  - enabled: 1
     path: Assets/Scenes/Final Levels/Rooms/Room 2.unity
     guid: e43da67c25b01ab45a28d8fa14961acf
+  - enabled: 1
+    path: Assets/Scenes/Final Levels/InbetweenRooms/Between2and3.unity
+    guid: 699c3e4ac93f31d4c9a01e3f47734e6c
   - enabled: 1
     path: Assets/Scenes/Final Levels/Rooms/Room 3.unity
     guid: 75d8cb0d8340edf4a8afce9aa278283b
   - enabled: 1
+    path: Assets/Scenes/Final Levels/InbetweenRooms/Between3and4.unity
+    guid: df4bbc9f9f569484fb43888decb2ac67
+  - enabled: 1
     path: Assets/Scenes/Final Levels/Rooms/Room 4.unity
     guid: a522f77ef2a2aea41916535c050fef25
+  - enabled: 1
+    path: Assets/Scenes/Final Levels/InbetweenRooms/Between4and5.unity
+    guid: a91922977833870419b9c7f1a2bfa21c
   - enabled: 1
     path: Assets/Scenes/Final Levels/Rooms/Room 5.unity
     guid: 39a71b508d3444749837ca515f4fff02
   - enabled: 1
+    path: Assets/Scenes/Final Levels/InbetweenRooms/Between5and6.unity
+    guid: c464f2f6c8ef3ea45a93f1cfe7354216
+  - enabled: 1
     path: Assets/Scenes/Final Levels/Rooms/Room 6.unity
     guid: 71b9caf0a883cf44393ff38ea9a7c3d5
   - enabled: 1
+    path: Assets/Scenes/Final Levels/InbetweenRooms/Between6and7.unity
+    guid: d1e7d3d3c047d0540bdaf1bce0e2db8b
+  - enabled: 1
     path: Assets/Scenes/Final Levels/Rooms/Room 7.unity
     guid: 143657bec9e809d4098a1d72025e8f69
+  - enabled: 1
+    path: Assets/Scenes/Final Levels/InbetweenRooms/Between7and8.unity
+    guid: 1d9d432dfcdf017429cf7f15eb3f1949
   - enabled: 1
     path: Assets/Scenes/Final Levels/Rooms/Room 8.unity
     guid: 4a36d1e3f62b8464bb55be575ce964ef

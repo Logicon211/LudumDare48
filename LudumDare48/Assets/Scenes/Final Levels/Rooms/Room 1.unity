@@ -2063,11 +2063,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ContinuousMusic
       objectReference: {fileID: 0}
-    - target: {fileID: 1849150120641370495, guid: f40b2a2bd63eca2498539d50ead3f6e2,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.254
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f40b2a2bd63eca2498539d50ead3f6e2, type: 3}
 --- !u!1 &334893669

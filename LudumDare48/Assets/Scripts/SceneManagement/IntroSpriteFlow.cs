@@ -19,6 +19,7 @@ public class IntroSpriteFlow : MonoBehaviour
 
 	public AudioSource voiceAudioSource;
 
+	public bool justLoadNextSceneIndex = false;
 	public int levelToLoadIndex;
 	public int slideToStopMusicAndJingle = 0;
 
@@ -42,8 +43,11 @@ public class IntroSpriteFlow : MonoBehaviour
 	// private bool runningThroughChoiceSlide = false;
 	private int currentChoice;
 
+	public float initialInputLock = 0.5f;
+
 	void Start ()
 	{
+		GameState.CurrentScene = SceneManager.GetActiveScene().buildIndex;
 		//Screen.SetResolution (1400, 900, true);
 		spriteRenderer = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject
 		if (GameObject.FindWithTag("GameController") != null)
@@ -56,8 +60,8 @@ public class IntroSpriteFlow : MonoBehaviour
 			choiceVoiceArray[0] = voiceChoice0;
 			choiceVoiceArray[1] = voiceChoice1;
 			choiceVoiceArray[2] = voiceChoice2;
-			// TODO: Check for choice to influence current slide choice:
-			currentChoice = 1;
+
+			currentChoice = GameState.GetChoice(GameState.CurrentScene - 1);
 
 			// runningThroughChoiceSlide = true;
 			spriteRenderer.sprite = choiceSpriteArray[currentChoice][slideIndex];
@@ -81,11 +85,13 @@ public class IntroSpriteFlow : MonoBehaviour
 	
 	void Update ()
 	{
+		initialInputLock -= Time.deltaTime;
+
 		foreach (Touch touch in Input.touches) {
 			slideIndex++;
 		}
 
-		if (Input.anyKeyDown) {//.GetKeyDown(KeyCode.RightArrow)) {
+		if (Input.anyKeyDown && initialInputLock <= 0) {//.GetKeyDown(KeyCode.RightArrow)) {
 			voiceAudioSource.Stop();
 			if(choiceSlidesEnabled) {
 				slideIndex++;
@@ -103,6 +109,10 @@ public class IntroSpriteFlow : MonoBehaviour
 					slideIndex++;
 					//Stop music and play jingle;
 					if (slideIndex == slideToStopMusicAndJingle && audioSource != null) {
+						GameObject[] objs = GameObject.FindGameObjectsWithTag("GlobalMusic");
+						foreach(var music in objs) {
+							Destroy(music);
+						}
 						Debug.Log ("JINGLE");
 						audioSource.Stop();
 						audioSource.PlayOneShot (jingle);
@@ -201,7 +211,11 @@ public class IntroSpriteFlow : MonoBehaviour
 			// if (gameManager != null)
 			// 	gameManager.LoadScene(levelToLoadIndex);
 			// else
+			if(justLoadNextSceneIndex) {
+				LoadingScreenManager.LoadScene(GameState.CurrentScene + 1);
+			} else {
 				LoadingScreenManager.LoadScene(levelToLoadIndex);
+			}
 			
 		}
 	}

@@ -198,8 +198,13 @@ PrefabInstance:
       objectReference: {fileID: 1457184470}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
+      propertyPath: initialInputLock
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
       propertyPath: levelToLoadIndex
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -860,6 +865,11 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceLines.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: justLoadNextSceneIndex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -1853,7 +1863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1206836191
 AudioSource:
   m_ObjectHideFlags: 0

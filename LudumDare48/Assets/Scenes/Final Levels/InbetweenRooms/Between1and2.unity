@@ -198,8 +198,13 @@ PrefabInstance:
       objectReference: {fileID: 1457184470}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
+      propertyPath: initialInputLock
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
       propertyPath: levelToLoadIndex
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -860,6 +865,11 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceLines.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: justLoadNextSceneIndex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -1698,17 +1708,17 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceChoice0.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: ddf55f1333c8a1b42bab9b7f940303f4, type: 3}
+      objectReference: {fileID: 8300000, guid: 1ee9fb895da756e4f8d81ea30cbab6e0, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice1.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: d4396d748e7d1c545b421af7f4d68c37, type: 3}
+      objectReference: {fileID: 8300000, guid: 188d2eb44b881944e811fbd691153cb4, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice1.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 8500775d688a6c84a9f66dab0748c07c, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice1.Array.data[2]
@@ -1718,12 +1728,12 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceChoice2.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 704bf55ddc9fbb9439c149cb6abaa50e, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice2.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 21165a6c07c88fa4bb9d787ec092c50a, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice2.Array.data[2]
@@ -1853,7 +1863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1206836191
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1864,7 +1874,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9711cc51380056e4caff2ff9b1683692, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.186
   m_Pitch: 1

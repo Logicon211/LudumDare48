@@ -12,7 +12,7 @@ public class FacePlayer : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (target != null)
         {

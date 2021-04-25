@@ -10,7 +10,7 @@ public static class GameState
     private static int currentScene = 0;
 
     // 0 = Bad option, 1 = Okay option, 2 = Good option, 3 = No Option Chosen
-    private static int[] choices = new int[NUMBER_OF_SCENES];
+    private static int[] choices = new int[] {3, 3, 3, 3, 3, 3, 3};
 
     public static int CurrentScene
     {

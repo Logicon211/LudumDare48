@@ -63,7 +63,7 @@ public class NavMovement : MonoBehaviour
 
     public bool IsMoving()
     {
-        return agent.velocity != new Vector3(0, 0, 0);
+        return agent.velocity.magnitude >= 1f;
     }
 
 }

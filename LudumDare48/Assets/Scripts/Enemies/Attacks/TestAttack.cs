@@ -7,6 +7,7 @@ public class TestAttack : MonoBehaviour, IAttack<Animator, GameObject>
 
     public float cooldown = 5f;
     public float damage = 5f;
+    public float attackRange = 5f;
     public void Attack(Animator animator, GameObject target)
     {
         Debug.Log("Testing Attack");
@@ -23,4 +24,9 @@ public class TestAttack : MonoBehaviour, IAttack<Animator, GameObject>
         return cooldown;
     }
 
+
+    public float GetAttackRange()
+    {
+        return attackRange;
+    }
 }

@@ -63,4 +63,19 @@ public static class GameState
         return GetChoice(currentScene) != 3;
     }
 
+    public static void ResetAllChoices()
+    {
+        choices = new Dictionary<int, int>();
+    }
+
+    public static void ResetChoice(int sceneNumber)
+    {
+        UpdateChoice(sceneNumber, 3);
+    }
+
+    public static void ResetCurrentSceneChoice()
+    {
+        UpdateChoice(currentScene, 3);
+    }
+
 }

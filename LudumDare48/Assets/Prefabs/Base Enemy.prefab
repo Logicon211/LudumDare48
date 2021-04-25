@@ -342,7 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   speed: 1
-  attackRange: 10
+  attackRange: 8
   targetTag: Player
   attackScriptName: 
   target: {fileID: 0}
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 3
-  attackRange: 8
+  attackRange: 5.5
   damage: 10
   damageDelay: 1
   attackAudio: {fileID: 1554437535}

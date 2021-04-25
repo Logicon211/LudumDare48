@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 4410884661994264942}
   - component: {fileID: 4410884661994264938}
   - component: {fileID: 4410884661994264939}
-  - component: {fileID: 4410884661994264932}
+  - component: {fileID: 4767281748380460541}
   - component: {fileID: 4410884661994264936}
   - component: {fileID: 4410884661994264937}
   - component: {fileID: 1418735445}
   - component: {fileID: 4668107643778124330}
+  - component: {fileID: 1418735440}
   m_Layer: 0
   m_Name: Bear Enemy
   m_TagString: Enemy
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e660e00b4b317564580fb30e3111401b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 3
   speed: 0
   attackRange: 5
   targetTag: Player
@@ -75,7 +76,7 @@ MonoBehaviour:
   target: {fileID: 0}
   testKill: 0
   testDamage: 0
---- !u!114 &4410884661994264932
+--- !u!114 &4767281748380460541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,11 +85,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4410884661994264943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b10c96f3d42b4447883a62b344b8caf, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c96f5daae157d14483b9aface26f058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 5
-  damage: 5
+  cooldown: 2
+  attackRange: 7
+  damage: 1
+  damageDelay: 0.5
 --- !u!195 &4410884661994264936
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -103,7 +106,7 @@ NavMeshAgent:
   m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 999
-  m_StoppingDistance: 3
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -123,7 +126,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -152,7 +155,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdb2e43295f9764eae6c8637ac09393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 3
+--- !u!114 &1418735440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410884661994264943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c96f5daae157d14483b9aface26f058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 5
+  attackRange: 5
+  damage: 5
+  damageDelay: 1
 --- !u!1001 &678373789016353979
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -27,6 +27,7 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
         currentHealth = health;
         attack = GetComponent<IAttack<Animator, GameObject>>();
         animator = GetComponentInChildren<Animator>();
+        if (animator == null) animator = GetComponent<Animator>();
         if (attack != null) currentAttackCooldown = attack.GetCooldown();
     }
 
@@ -42,11 +43,14 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
             }
         }
         PerformAttack();
+    }
 
+    void FixedUpdate()
+    {
         // update values
         if (currentAttackCooldown > 0f) currentAttackCooldown -= Time.deltaTime;
-
     }
+
 
     void PerformAttack()
     {

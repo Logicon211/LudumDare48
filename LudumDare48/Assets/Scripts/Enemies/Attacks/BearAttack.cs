@@ -11,10 +11,14 @@ public class BearAttack : MonoBehaviour, IAttack<Animator, GameObject>
     public float damage = 5f;
     public float damageDelay = 1f; // Delay from animation start to damage being dealt in case player moves away
 
+    public AudioSource attackAudio;
+
     float delayCooldown = 0f;
     bool attacking = false;
 
+    public AudioClip attackClip;
     GameObject target;
+    
 
 
     void FixedUpdate()
@@ -27,6 +31,7 @@ public class BearAttack : MonoBehaviour, IAttack<Animator, GameObject>
             }
             if (delayCooldown <= 0F)
             {
+                attacking = false;
                 DealDamage();
             }
         }
@@ -45,11 +50,11 @@ public class BearAttack : MonoBehaviour, IAttack<Animator, GameObject>
 
     void DealDamage()
     {
+        attackAudio.PlayOneShot(attackClip);
         if(Vector3.Distance(gameObject.transform.position, target.transform.position) <= attackRange + 1)
         {
             IDamageable<float> targetDamageable = target.GetComponent<IDamageable<float>>();
             if (targetDamageable != null) targetDamageable.Damage(damage);
-            attacking = false;
         }
     }
 

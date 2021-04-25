@@ -11,9 +11,9 @@ public class NavMovement : MonoBehaviour
 
     bool stopped = false;
 
+    public AudioSource movementAudio;
     public NavMeshAgent agent;
     public GameObject target;
-
     public Animator animationController;
 
     void Start()
@@ -46,10 +46,18 @@ public class NavMovement : MonoBehaviour
         {
             if (IsMoving())
             {
+                if (movementAudio != null)
+                {
+                    if (!movementAudio.isPlaying) movementAudio.Play(0);
+                }
                 animationController.SetBool("moving", true);
                 animationController.SetFloat("walkMoveSpeed", speed / 2);
             }
-            else animationController.SetBool("moving", false);
+            else
+            {
+                movementAudio.Stop();
+                animationController.SetBool("moving", false);
+            }
         }
     }
 

@@ -10,7 +10,7 @@ public static class GameState
     private static int currentScene = 0;
 
     // 0 = Bad option, 1 = Okay option, 2 = Good option, 3 = No Option Chosen
-    private static int[] choices = new int[] {3, 3, 3, 3, 3, 3, 3};
+    private static Dictionary<int, int> choices = new Dictionary<int, int>();
 
     public static int CurrentScene
     {
@@ -24,7 +24,7 @@ public static class GameState
         }
     }
 
-    public static int[] Choices
+    public static Dictionary<int, int> Choices
     {
         get
         {
@@ -38,17 +38,29 @@ public static class GameState
 
     public static int GetChoice(int sceneNumber)
     {
-        return choices[sceneNumber];
+        if (choices.ContainsKey(sceneNumber))
+        {
+            return choices[sceneNumber];
+        } else
+        {
+            return 3;
+        }
     }
 
     public static void UpdateChoice(int sceneNumber, int choice)
     {
-        choices[sceneNumber] = choice;
+        if (choices.ContainsKey(sceneNumber))
+        {
+            choices[sceneNumber] = choice;
+        } else
+        {
+            choices.Add(sceneNumber, choice);
+        }
     }
 
     public static bool CanOpenDoor()
     {
-        return choices[currentScene] != 3;
+        return GetChoice(currentScene) != 3;
     }
 
 }

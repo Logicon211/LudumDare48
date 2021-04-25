@@ -35,6 +35,11 @@ public class DialogOrbPickupController : MonoBehaviour
 
     private Light lightSource;
 
+    public float pulseRange = 4.0f;
+    public float pulseSpeed = 3.0f;
+  
+    public float pulseMinimum = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +58,8 @@ public class DialogOrbPickupController : MonoBehaviour
             FloatAnimation();
         }
         TextFacePlayer(camera.transform.position);
+
+        lightSource.range = pulseMinimum + Mathf.PingPong(Time.time * pulseSpeed, pulseRange - pulseMinimum);
     }
 
     void FloatAnimation()

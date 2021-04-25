@@ -4927,6 +4927,9 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 8569097041667371097, guid: 9f3f75cb61fe86546abea3f82e4cb79d,
     type: 3}
   dialog: Press [E] to pickup
+  pulseRange: 25
+  pulseSpeed: 15
+  pulseMinimum: 3
 --- !u!108 &2633352338816751465
 Light:
   m_ObjectHideFlags: 0
@@ -4939,7 +4942,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
+  m_Intensity: 5
   m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

@@ -26,17 +26,19 @@ GameObject:
   - component: {fileID: 4410884661994264942}
   - component: {fileID: 4410884661994264938}
   - component: {fileID: 4410884661994264939}
-  - component: {fileID: 4410884661994264932}
+  - component: {fileID: 2897205161529292201}
   - component: {fileID: 4410884661994264936}
   - component: {fileID: 4410884661994264937}
   - component: {fileID: 4410884661994264933}
+  - component: {fileID: 207642593}
+  - component: {fileID: 207642592}
   m_Layer: 0
   m_Name: Base Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4410884661994264942
 Transform:
   m_ObjectHideFlags: 0
@@ -81,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e660e00b4b317564580fb30e3111401b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 3
   speed: 1
   attackRange: 10
   targetTag: Player
@@ -89,7 +91,7 @@ MonoBehaviour:
   target: {fileID: 0}
   testKill: 0
   testDamage: 0
---- !u!114 &4410884661994264932
+--- !u!114 &2897205161529292201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,10 +100,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4410884661994264943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b10c96f3d42b4447883a62b344b8caf, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c96f5daae157d14483b9aface26f058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 5
+  cooldown: 3
+  attackRange: 8
+  damage: 10
+  damageDelay: 1
 --- !u!195 &4410884661994264936
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -155,6 +160,31 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!65 &207642593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410884661994264943}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14, y: 0.17, z: 0.1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &207642592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410884661994264943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdb2e43295f9764eae6c8637ac09393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4410884660212600021
 PrefabInstance:
   m_ObjectHideFlags: 0

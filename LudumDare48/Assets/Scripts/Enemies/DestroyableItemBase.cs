@@ -7,19 +7,23 @@ public class DestroyableItemBase : MonoBehaviour, IDamageable<float>, IKillable
 
     public float health;
 
+    public AudioSource oneShotAudioSource;
+    public AudioClip destroyAudio;
+    public GameObject itemObject;
+
     float currentHealth;
     RandomStuffSpawner spawner;
 
-    // Start is called before the first frame update
+    bool destroyed = false;
+
     void Start()
     {
         currentHealth = health;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Damage(float damageTaken)
@@ -34,6 +38,14 @@ public class DestroyableItemBase : MonoBehaviour, IDamageable<float>, IKillable
         {
             spawner.UpdateList(gameObject);
         }
+        oneShotAudioSource.PlayOneShot(destroyAudio);
+        Destroy(itemObject);
+        Destroy(gameObject, destroyAudio.length);
+
+    }
+
+    void Destroy()
+    {
         Destroy(gameObject);
     }
 

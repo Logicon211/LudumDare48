@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 1554437534}
   - component: {fileID: 1554437535}
   m_Layer: 0
-  m_Name: Attacking Audio
+  m_Name: One Shot Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -346,6 +346,8 @@ MonoBehaviour:
   targetTag: Player
   attackScriptName: 
   target: {fileID: 0}
+  oneshotAudioSource: {fileID: 1554437535}
+  deathAudio: {fileID: 8300000, guid: f723f676bb0aa3646834e7e2462903ad, type: 3}
   testKill: 0
   testDamage: 0
 --- !u!114 &2897205161529292201

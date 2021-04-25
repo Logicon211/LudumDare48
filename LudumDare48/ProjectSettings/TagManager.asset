@@ -17,6 +17,9 @@ TagManager:
   - ControlPanel
   - Nuke
   - SF_Door
+  - Weapon
+  - FxTemporaire
+  - Dialog
   layers:
   - Default
   - TransparentFX
@@ -35,7 +38,7 @@ TagManager:
   - Obstacle
   - Debris
   - Weapon
-  - 
+  - DialogPickup
   - 
   - 
   - 

@@ -1,220 +1,598 @@
 fileFormatVersion: 2
 guid: 725df1be099d8784cb72a8226ce82cec
-timeCreated: 1482735999
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: bear__head
-    100004: bear__l_calf
-    100006: bear__l_clavicle
-    100008: bear__l_foot
-    100010: bear__l_forearm
-    100012: bear__l_foretwist
-    100014: bear__l_hand
-    100016: bear__l_thigh
-    100018: bear__l_toe0
-    100020: bear__l_upperarm
-    100022: bear__neck
-    100024: bear__pelvis
-    100026: bear__r_calf
-    100028: bear__r_clavicle
-    100030: bear__r_foot
-    100032: bear__r_forearm
-    100034: bear__r_foretwist
-    100036: bear__r_hand
-    100038: bear__r_thigh
-    100040: bear__r_toe0
-    100042: bear__r_upperarm
-    100044: bear__spine
-    100046: bear__spine1
-    100048: brows
-    100050: ear_l
-    100052: ear_r
-    100054: elb
-    100056: elt
-    100058: erb
-    100060: ert
-    100062: eye_l
-    100064: eye_r
-    100066: fi_l0_00
-    100068: fi_l0_01
-    100070: fi_l1_00
-    100072: fi_l1_01
-    100074: fi_l2_00
-    100076: fi_l2_01
-    100078: fi_l3_00
-    100080: fi_l3_01
-    100082: fi_r0_00
-    100084: fi_r0_01
-    100086: fi_r1_00
-    100088: fi_r1_01
-    100090: fi_r2_00
-    100092: fi_r2_01
-    100094: fi_r3_00
-    100096: fi_r3_01
-    100098: jaw
-    100100: lip_bot
-    100102: lip_top
-    100104: mesh_bear
-    100106: mesh_belt
-    100108: mesh_dejurny
-    100110: mesh_kompass
-    100112: mesh_rukzak
-    100114: root_bear
-    100116: tail
-    400000: //RootNode
-    400002: bear__head
-    400004: bear__l_calf
-    400006: bear__l_clavicle
-    400008: bear__l_foot
-    400010: bear__l_forearm
-    400012: bear__l_foretwist
-    400014: bear__l_hand
-    400016: bear__l_thigh
-    400018: bear__l_toe0
-    400020: bear__l_upperarm
-    400022: bear__neck
-    400024: bear__pelvis
-    400026: bear__r_calf
-    400028: bear__r_clavicle
-    400030: bear__r_foot
-    400032: bear__r_forearm
-    400034: bear__r_foretwist
-    400036: bear__r_hand
-    400038: bear__r_thigh
-    400040: bear__r_toe0
-    400042: bear__r_upperarm
-    400044: bear__spine
-    400046: bear__spine1
-    400048: brows
-    400050: ear_l
-    400052: ear_r
-    400054: elb
-    400056: elt
-    400058: erb
-    400060: ert
-    400062: eye_l
-    400064: eye_r
-    400066: fi_l0_00
-    400068: fi_l0_01
-    400070: fi_l1_00
-    400072: fi_l1_01
-    400074: fi_l2_00
-    400076: fi_l2_01
-    400078: fi_l3_00
-    400080: fi_l3_01
-    400082: fi_r0_00
-    400084: fi_r0_01
-    400086: fi_r1_00
-    400088: fi_r1_01
-    400090: fi_r2_00
-    400092: fi_r2_01
-    400094: fi_r3_00
-    400096: fi_r3_01
-    400098: jaw
-    400100: lip_bot
-    400102: lip_top
-    400104: mesh_bear
-    400106: mesh_belt
-    400108: mesh_dejurny
-    400110: mesh_kompass
-    400112: mesh_rukzak
-    400114: root_bear
-    400116: tail
-    4300000: mesh_bear
-    4300002: mesh_belt
-    4300004: mesh_dejurny
-    4300006: mesh_kompass
-    4300008: mesh_rukzak
-    7400000: base
-    7400002: ak_damage_A
-    7400004: ak_damage_B
-    7400006: ak_draw
-    7400008: ak_holster
-    7400010: ak_idle
-    7400012: ak_run
-    7400014: ak_shoot_burst
-    7400016: ak_shoot_single
-    7400018: ak_walk
-    7400020: norm_attack_1
-    7400022: norm_attack_2
-    7400024: norm_attack_3
-    7400026: norm_damage_A
-    7400028: norm_damage_B
-    7400030: norm_growl
-    7400032: norm_idle_short
-    7400034: norm_idle
-    7400036: norm_run
-    7400038: norm_walk
-    7400040: death
-    7400042: drink_votka
-    7400044: balalayka
-    7400046: additive_aim_up_90
-    7400048: additive_aim_down_90
-    7400050: ak_run_arc_L_30
-    7400052: ak_run_arc_L_90
-    7400054: ak_run_arc_R_30
-    7400056: ak_run_arc_R_90
-    7400058: ak_turn_L_90
-    7400060: ak_turn_L_180
-    7400062: ak_turn_L_loop
-    7400064: ar_turn_R_90
-    7400066: ak_turn_R_180
-    7400068: ak_turn_R_loop
-    7400070: norm_run_arc_L_30
-    7400072: norm_run_arc_L_60
-    7400074: norm_run_arc_L_90
-    7400076: norm_run_arc_R_30
-    7400078: norm_run_arc_R_60
-    7400080: norm_run_arc_R_90
-    7400082: norm_turn_L_90
-    7400084: norm_turn_L_180
-    7400086: norm_turn_L_loop
-    7400088: norm_turn_R_90
-    7400090: norm_turn_R_180
-    7400092: norm_turn_R_loop
-    7400094: norm_attack_30
-    7400096: norm_attack_31
-    7400098: ak_draw0
-    7400100: ak_holster0
-    7400102: balalayka0
-    7400104: balalayka1
-    7400106: balalayka2
-    7400108: balalayka3
-    7400110: drink_votka0
-    7400112: drink_votka1
-    9500000: //RootNode
-    13700000: mesh_bear
-    13700002: mesh_belt
-    13700004: mesh_dejurny
-    13700006: mesh_kompass
-    13700008: mesh_rukzak
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: bear__head
+  - first:
+      1: 100004
+    second: bear__l_calf
+  - first:
+      1: 100006
+    second: bear__l_clavicle
+  - first:
+      1: 100008
+    second: bear__l_foot
+  - first:
+      1: 100010
+    second: bear__l_forearm
+  - first:
+      1: 100012
+    second: bear__l_foretwist
+  - first:
+      1: 100014
+    second: bear__l_hand
+  - first:
+      1: 100016
+    second: bear__l_thigh
+  - first:
+      1: 100018
+    second: bear__l_toe0
+  - first:
+      1: 100020
+    second: bear__l_upperarm
+  - first:
+      1: 100022
+    second: bear__neck
+  - first:
+      1: 100024
+    second: bear__pelvis
+  - first:
+      1: 100026
+    second: bear__r_calf
+  - first:
+      1: 100028
+    second: bear__r_clavicle
+  - first:
+      1: 100030
+    second: bear__r_foot
+  - first:
+      1: 100032
+    second: bear__r_forearm
+  - first:
+      1: 100034
+    second: bear__r_foretwist
+  - first:
+      1: 100036
+    second: bear__r_hand
+  - first:
+      1: 100038
+    second: bear__r_thigh
+  - first:
+      1: 100040
+    second: bear__r_toe0
+  - first:
+      1: 100042
+    second: bear__r_upperarm
+  - first:
+      1: 100044
+    second: bear__spine
+  - first:
+      1: 100046
+    second: bear__spine1
+  - first:
+      1: 100048
+    second: brows
+  - first:
+      1: 100050
+    second: ear_l
+  - first:
+      1: 100052
+    second: ear_r
+  - first:
+      1: 100054
+    second: elb
+  - first:
+      1: 100056
+    second: elt
+  - first:
+      1: 100058
+    second: erb
+  - first:
+      1: 100060
+    second: ert
+  - first:
+      1: 100062
+    second: eye_l
+  - first:
+      1: 100064
+    second: eye_r
+  - first:
+      1: 100066
+    second: fi_l0_00
+  - first:
+      1: 100068
+    second: fi_l0_01
+  - first:
+      1: 100070
+    second: fi_l1_00
+  - first:
+      1: 100072
+    second: fi_l1_01
+  - first:
+      1: 100074
+    second: fi_l2_00
+  - first:
+      1: 100076
+    second: fi_l2_01
+  - first:
+      1: 100078
+    second: fi_l3_00
+  - first:
+      1: 100080
+    second: fi_l3_01
+  - first:
+      1: 100082
+    second: fi_r0_00
+  - first:
+      1: 100084
+    second: fi_r0_01
+  - first:
+      1: 100086
+    second: fi_r1_00
+  - first:
+      1: 100088
+    second: fi_r1_01
+  - first:
+      1: 100090
+    second: fi_r2_00
+  - first:
+      1: 100092
+    second: fi_r2_01
+  - first:
+      1: 100094
+    second: fi_r3_00
+  - first:
+      1: 100096
+    second: fi_r3_01
+  - first:
+      1: 100098
+    second: jaw
+  - first:
+      1: 100100
+    second: lip_bot
+  - first:
+      1: 100102
+    second: lip_top
+  - first:
+      1: 100104
+    second: mesh_bear
+  - first:
+      1: 100106
+    second: mesh_belt
+  - first:
+      1: 100108
+    second: mesh_dejurny
+  - first:
+      1: 100110
+    second: mesh_kompass
+  - first:
+      1: 100112
+    second: mesh_rukzak
+  - first:
+      1: 100114
+    second: root_bear
+  - first:
+      1: 100116
+    second: tail
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: bear__head
+  - first:
+      4: 400004
+    second: bear__l_calf
+  - first:
+      4: 400006
+    second: bear__l_clavicle
+  - first:
+      4: 400008
+    second: bear__l_foot
+  - first:
+      4: 400010
+    second: bear__l_forearm
+  - first:
+      4: 400012
+    second: bear__l_foretwist
+  - first:
+      4: 400014
+    second: bear__l_hand
+  - first:
+      4: 400016
+    second: bear__l_thigh
+  - first:
+      4: 400018
+    second: bear__l_toe0
+  - first:
+      4: 400020
+    second: bear__l_upperarm
+  - first:
+      4: 400022
+    second: bear__neck
+  - first:
+      4: 400024
+    second: bear__pelvis
+  - first:
+      4: 400026
+    second: bear__r_calf
+  - first:
+      4: 400028
+    second: bear__r_clavicle
+  - first:
+      4: 400030
+    second: bear__r_foot
+  - first:
+      4: 400032
+    second: bear__r_forearm
+  - first:
+      4: 400034
+    second: bear__r_foretwist
+  - first:
+      4: 400036
+    second: bear__r_hand
+  - first:
+      4: 400038
+    second: bear__r_thigh
+  - first:
+      4: 400040
+    second: bear__r_toe0
+  - first:
+      4: 400042
+    second: bear__r_upperarm
+  - first:
+      4: 400044
+    second: bear__spine
+  - first:
+      4: 400046
+    second: bear__spine1
+  - first:
+      4: 400048
+    second: brows
+  - first:
+      4: 400050
+    second: ear_l
+  - first:
+      4: 400052
+    second: ear_r
+  - first:
+      4: 400054
+    second: elb
+  - first:
+      4: 400056
+    second: elt
+  - first:
+      4: 400058
+    second: erb
+  - first:
+      4: 400060
+    second: ert
+  - first:
+      4: 400062
+    second: eye_l
+  - first:
+      4: 400064
+    second: eye_r
+  - first:
+      4: 400066
+    second: fi_l0_00
+  - first:
+      4: 400068
+    second: fi_l0_01
+  - first:
+      4: 400070
+    second: fi_l1_00
+  - first:
+      4: 400072
+    second: fi_l1_01
+  - first:
+      4: 400074
+    second: fi_l2_00
+  - first:
+      4: 400076
+    second: fi_l2_01
+  - first:
+      4: 400078
+    second: fi_l3_00
+  - first:
+      4: 400080
+    second: fi_l3_01
+  - first:
+      4: 400082
+    second: fi_r0_00
+  - first:
+      4: 400084
+    second: fi_r0_01
+  - first:
+      4: 400086
+    second: fi_r1_00
+  - first:
+      4: 400088
+    second: fi_r1_01
+  - first:
+      4: 400090
+    second: fi_r2_00
+  - first:
+      4: 400092
+    second: fi_r2_01
+  - first:
+      4: 400094
+    second: fi_r3_00
+  - first:
+      4: 400096
+    second: fi_r3_01
+  - first:
+      4: 400098
+    second: jaw
+  - first:
+      4: 400100
+    second: lip_bot
+  - first:
+      4: 400102
+    second: lip_top
+  - first:
+      4: 400104
+    second: mesh_bear
+  - first:
+      4: 400106
+    second: mesh_belt
+  - first:
+      4: 400108
+    second: mesh_dejurny
+  - first:
+      4: 400110
+    second: mesh_kompass
+  - first:
+      4: 400112
+    second: mesh_rukzak
+  - first:
+      4: 400114
+    second: root_bear
+  - first:
+      4: 400116
+    second: tail
+  - first:
+      43: 4300000
+    second: mesh_bear
+  - first:
+      43: 4300002
+    second: mesh_belt
+  - first:
+      43: 4300004
+    second: mesh_dejurny
+  - first:
+      43: 4300006
+    second: mesh_kompass
+  - first:
+      43: 4300008
+    second: mesh_rukzak
+  - first:
+      74: 7400000
+    second: base
+  - first:
+      74: 7400002
+    second: ak_damage_A
+  - first:
+      74: 7400004
+    second: ak_damage_B
+  - first:
+      74: 7400006
+    second: ak_draw
+  - first:
+      74: 7400008
+    second: ak_holster
+  - first:
+      74: 7400010
+    second: ak_idle
+  - first:
+      74: 7400012
+    second: ak_run
+  - first:
+      74: 7400014
+    second: ak_shoot_burst
+  - first:
+      74: 7400016
+    second: ak_shoot_single
+  - first:
+      74: 7400018
+    second: ak_walk
+  - first:
+      74: 7400020
+    second: norm_attack_1
+  - first:
+      74: 7400022
+    second: norm_attack_2
+  - first:
+      74: 7400024
+    second: norm_attack_3
+  - first:
+      74: 7400026
+    second: norm_damage_A
+  - first:
+      74: 7400028
+    second: norm_damage_B
+  - first:
+      74: 7400030
+    second: norm_growl
+  - first:
+      74: 7400032
+    second: norm_idle_short
+  - first:
+      74: 7400034
+    second: norm_idle
+  - first:
+      74: 7400036
+    second: norm_run
+  - first:
+      74: 7400038
+    second: norm_walk
+  - first:
+      74: 7400040
+    second: death
+  - first:
+      74: 7400042
+    second: drink_votka
+  - first:
+      74: 7400044
+    second: balalayka
+  - first:
+      74: 7400046
+    second: additive_aim_up_90
+  - first:
+      74: 7400048
+    second: additive_aim_down_90
+  - first:
+      74: 7400050
+    second: ak_run_arc_L_30
+  - first:
+      74: 7400052
+    second: ak_run_arc_L_90
+  - first:
+      74: 7400054
+    second: ak_run_arc_R_30
+  - first:
+      74: 7400056
+    second: ak_run_arc_R_90
+  - first:
+      74: 7400058
+    second: ak_turn_L_90
+  - first:
+      74: 7400060
+    second: ak_turn_L_180
+  - first:
+      74: 7400062
+    second: ak_turn_L_loop
+  - first:
+      74: 7400064
+    second: ar_turn_R_90
+  - first:
+      74: 7400066
+    second: ak_turn_R_180
+  - first:
+      74: 7400068
+    second: ak_turn_R_loop
+  - first:
+      74: 7400070
+    second: norm_run_arc_L_30
+  - first:
+      74: 7400072
+    second: norm_run_arc_L_60
+  - first:
+      74: 7400074
+    second: norm_run_arc_L_90
+  - first:
+      74: 7400076
+    second: norm_run_arc_R_30
+  - first:
+      74: 7400078
+    second: norm_run_arc_R_60
+  - first:
+      74: 7400080
+    second: norm_run_arc_R_90
+  - first:
+      74: 7400082
+    second: norm_turn_L_90
+  - first:
+      74: 7400084
+    second: norm_turn_L_180
+  - first:
+      74: 7400086
+    second: norm_turn_L_loop
+  - first:
+      74: 7400088
+    second: norm_turn_R_90
+  - first:
+      74: 7400090
+    second: norm_turn_R_180
+  - first:
+      74: 7400092
+    second: norm_turn_R_loop
+  - first:
+      74: 7400094
+    second: norm_attack_30
+  - first:
+      74: 7400096
+    second: norm_attack_31
+  - first:
+      74: 7400098
+    second: ak_draw0
+  - first:
+      74: 7400100
+    second: ak_holster0
+  - first:
+      74: 7400102
+    second: balalayka0
+  - first:
+      74: 7400104
+    second: balalayka1
+  - first:
+      74: 7400106
+    second: balalayka2
+  - first:
+      74: 7400108
+    second: balalayka3
+  - first:
+      74: 7400110
+    second: drink_votka0
+  - first:
+      74: 7400112
+    second: drink_votka1
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: mesh_bear
+  - first:
+      137: 13700002
+    second: mesh_belt
+  - first:
+      137: 13700004
+    second: mesh_dejurny
+  - first:
+      137: 13700006
+    second: mesh_kompass
+  - first:
+      137: 13700008
+    second: mesh_rukzak
+  externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: root_bear
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: base
       takeName: base
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -361,6 +739,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_damage_A
       takeName: ak_damage_A
+      internalID: 0
       firstFrame: 0
       lastFrame: 18
       wrapMode: 0
@@ -507,6 +886,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_damage_B
       takeName: ak_damage_B
+      internalID: 0
       firstFrame: 0
       lastFrame: 18
       wrapMode: 0
@@ -653,6 +1033,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_draw
       takeName: ak_draw
+      internalID: 0
       firstFrame: 0
       lastFrame: 9
       wrapMode: 0
@@ -799,6 +1180,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_holster
       takeName: ak_holster
+      internalID: 0
       firstFrame: 0
       lastFrame: 11
       wrapMode: 0
@@ -945,6 +1327,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_idle
       takeName: ak_idle
+      internalID: 0
       firstFrame: 0
       lastFrame: 88
       wrapMode: 0
@@ -1091,6 +1474,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_run
       takeName: ak_run
+      internalID: 0
       firstFrame: 0
       lastFrame: 18
       wrapMode: 0
@@ -1237,6 +1621,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_shoot_burst
       takeName: ak_shoot_burst
+      internalID: 0
       firstFrame: 0
       lastFrame: 24
       wrapMode: 0
@@ -1383,6 +1768,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_shoot_single
       takeName: ak_shoot_single
+      internalID: 0
       firstFrame: 0
       lastFrame: 5
       wrapMode: 0
@@ -1529,6 +1915,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_walk
       takeName: ak_walk
+      internalID: 0
       firstFrame: 0
       lastFrame: 24
       wrapMode: 0
@@ -1675,6 +2062,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_attack_1
       takeName: norm_attack_1
+      internalID: 0
       firstFrame: 0
       lastFrame: 34
       wrapMode: 0
@@ -1821,6 +2209,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_attack_2
       takeName: norm_attack_2
+      internalID: 0
       firstFrame: 0
       lastFrame: 34
       wrapMode: 0
@@ -1967,6 +2356,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_attack_3
       takeName: norm_attack_3
+      internalID: 0
       firstFrame: 0
       lastFrame: 9
       wrapMode: 0
@@ -2113,6 +2503,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_damage_A
       takeName: norm_damage_A
+      internalID: 0
       firstFrame: 0
       lastFrame: 21
       wrapMode: 0
@@ -2259,6 +2650,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_damage_B
       takeName: norm_damage_B
+      internalID: 0
       firstFrame: 0
       lastFrame: 18
       wrapMode: 0
@@ -2405,6 +2797,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_growl
       takeName: norm_growl
+      internalID: 0
       firstFrame: 0
       lastFrame: 90
       wrapMode: 0
@@ -2551,6 +2944,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_idle_short
       takeName: norm_idle_short
+      internalID: 0
       firstFrame: 0
       lastFrame: 45
       wrapMode: 0
@@ -2697,6 +3091,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_idle
       takeName: norm_idle
+      internalID: 0
       firstFrame: 0
       lastFrame: 180
       wrapMode: 0
@@ -2843,6 +3238,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_run
       takeName: norm_run
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -2989,6 +3385,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_walk
       takeName: norm_walk
+      internalID: 0
       firstFrame: 0
       lastFrame: 32
       wrapMode: 0
@@ -3135,6 +3532,7 @@ ModelImporter:
     - serializedVersion: 16
       name: death
       takeName: death
+      internalID: 0
       firstFrame: 0
       lastFrame: 44
       wrapMode: 0
@@ -3281,6 +3679,7 @@ ModelImporter:
     - serializedVersion: 16
       name: drink_votka
       takeName: drink_votka
+      internalID: 0
       firstFrame: 0
       lastFrame: 10
       wrapMode: 0
@@ -3427,6 +3826,7 @@ ModelImporter:
     - serializedVersion: 16
       name: balalayka
       takeName: balalayka
+      internalID: 0
       firstFrame: 0
       lastFrame: 8
       wrapMode: 0
@@ -3573,6 +3973,7 @@ ModelImporter:
     - serializedVersion: 16
       name: additive_aim_up_90
       takeName: additive_aim_up_90
+      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -3719,6 +4120,7 @@ ModelImporter:
     - serializedVersion: 16
       name: additive_aim_down_90
       takeName: additive_aim_down_90
+      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -3865,6 +4267,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_run_arc_L_30
       takeName: ak_run_arc_L_30
+      internalID: 0
       firstFrame: 0
       lastFrame: 18
       wrapMode: 0
@@ -4011,6 +4414,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_run_arc_L_90
       takeName: ak_run_arc_L_90
+      internalID: 0
       firstFrame: 0
       lastFrame: 18
       wrapMode: 0
@@ -4157,6 +4561,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_run_arc_R_30
       takeName: ak_run_arc_R_30
+      internalID: 0
       firstFrame: 0
       lastFrame: 18
       wrapMode: 0
@@ -4303,6 +4708,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_run_arc_R_90
       takeName: ak_run_arc_R_90
+      internalID: 0
       firstFrame: 0
       lastFrame: 18
       wrapMode: 0
@@ -4449,6 +4855,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_turn_L_90
       takeName: ak_turn_L_90
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -4595,6 +5002,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_turn_L_180
       takeName: ak_turn_L_180
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -4741,6 +5149,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_turn_L_loop
       takeName: ak_turn_L_loop
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -4887,6 +5296,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ar_turn_R_90
       takeName: ar_turn_R_90
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -5033,6 +5443,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_turn_R_180
       takeName: ak_turn_R_180
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -5179,6 +5590,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_turn_R_loop
       takeName: ak_turn_R_loop
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -5325,6 +5737,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_run_arc_L_30
       takeName: norm_run_arc_L_30
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -5471,6 +5884,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_run_arc_L_60
       takeName: norm_run_arc_L_60
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -5617,6 +6031,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_run_arc_L_90
       takeName: norm_run_arc_L_90
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -5763,6 +6178,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_run_arc_R_30
       takeName: norm_run_arc_R_30
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -5909,6 +6325,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_run_arc_R_60
       takeName: norm_run_arc_R_60
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -6055,6 +6472,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_run_arc_R_90
       takeName: norm_run_arc_R_90
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -6201,6 +6619,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_turn_L_90
       takeName: norm_turn_L_90
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -6347,6 +6766,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_turn_L_180
       takeName: norm_turn_L_180
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -6493,6 +6913,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_turn_L_loop
       takeName: norm_turn_L_loop
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -6639,6 +7060,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_turn_R_90
       takeName: norm_turn_R_90
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -6785,6 +7207,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_turn_R_180
       takeName: norm_turn_R_180
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -6931,6 +7354,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_turn_R_loop
       takeName: norm_turn_R_loop
+      internalID: 0
       firstFrame: 0
       lastFrame: 16
       wrapMode: 0
@@ -7077,6 +7501,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_attack_30
       takeName: norm_attack_3
+      internalID: 0
       firstFrame: 10
       lastFrame: 32
       wrapMode: 0
@@ -7223,6 +7648,7 @@ ModelImporter:
     - serializedVersion: 16
       name: norm_attack_31
       takeName: norm_attack_3
+      internalID: 0
       firstFrame: 33
       lastFrame: 42
       wrapMode: 0
@@ -7369,6 +7795,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_draw0
       takeName: ak_draw
+      internalID: 0
       firstFrame: 10
       lastFrame: 25
       wrapMode: 0
@@ -7515,6 +7942,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ak_holster0
       takeName: ak_holster
+      internalID: 0
       firstFrame: 12
       lastFrame: 20
       wrapMode: 0
@@ -7661,6 +8089,7 @@ ModelImporter:
     - serializedVersion: 16
       name: balalayka0
       takeName: balalayka
+      internalID: 0
       firstFrame: 9
       lastFrame: 39
       wrapMode: 0
@@ -7807,6 +8236,7 @@ ModelImporter:
     - serializedVersion: 16
       name: balalayka1
       takeName: balalayka
+      internalID: 0
       firstFrame: 40
       lastFrame: 104
       wrapMode: 0
@@ -7953,6 +8383,7 @@ ModelImporter:
     - serializedVersion: 16
       name: balalayka2
       takeName: balalayka
+      internalID: 0
       firstFrame: 105
       lastFrame: 128
       wrapMode: 0
@@ -8099,6 +8530,7 @@ ModelImporter:
     - serializedVersion: 16
       name: balalayka3
       takeName: balalayka
+      internalID: 0
       firstFrame: 129
       lastFrame: 140
       wrapMode: 0
@@ -8245,6 +8677,7 @@ ModelImporter:
     - serializedVersion: 16
       name: drink_votka0
       takeName: drink_votka
+      internalID: 0
       firstFrame: 10
       lastFrame: 133
       wrapMode: 0
@@ -8391,6 +8824,7 @@ ModelImporter:
     - serializedVersion: 16
       name: drink_votka1
       takeName: drink_votka
+      internalID: 0
       firstFrame: 133
       lastFrame: 155
       wrapMode: 0
@@ -8540,25 +8974,45 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -8568,11 +9022,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: root_bear
+    globalScale: 1
+    rootMotionBoneName: 
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

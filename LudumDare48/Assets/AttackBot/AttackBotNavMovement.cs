@@ -11,9 +11,9 @@ public class AttackBotNavMovement : MonoBehaviour
 
     bool stopped = false;
 
+    public AudioSource movementAudio;
     public NavMeshAgent agent;
-    public GameObject target;
-
+    public Transform playerTarget;
     public Animator animationController;
 
     void Start()
@@ -21,20 +21,16 @@ public class AttackBotNavMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animationController = GetComponentInChildren<Animator>();
         agent.speed = speed;
+        playerTarget = GameObject.FindGameObjectWithTag(targetTag).transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target == null)
-        {
-            GameObject gameObject = GameObject.FindGameObjectWithTag(targetTag);
-            if (gameObject != null) target = gameObject;
-        }
         // Updating target position
-        if (target != null && !stopped)
+        if (!stopped)
         {
-            Transform goal = target.transform;
+            Transform goal = playerTarget;
             agent.destination = goal.position;
         }
         UpdateAnimation();
@@ -44,24 +40,59 @@ public class AttackBotNavMovement : MonoBehaviour
     {
         if (animationController)
         {
-            animationController.SetBool("moving", IsMoving());
-        }
-        if(agent.velocity.y > 1f)
-        {
-            animationController.SetBool("TurningRight", true);
-        }
-        else
-        {
-            animationController.SetBool("TurningLeft", false);
+            if (agent.velocity.magnitude >= 1f)
+            {
+                animationController.SetBool("moving", true);
+                if (!movementAudio.isPlaying) movementAudio.Play(0);
+
+                if (agent.velocity.y > 1f)
+                {
+                    animationController.SetBool("TurningRight", true);
+                    animationController.SetBool("TurningLeft", false);
+                }
+                else if (agent.velocity.y < -1f)
+                {
+                    animationController.SetBool("TurningLeft", true);
+                    animationController.SetBool("TurningRight", false);
+                }
+                else
+                {
+                    animationController.SetBool("TurningRight", false);
+                    animationController.SetBool("TurningLeft", false);
+                }
+            }
+            else
+            {
+                if (!movementAudio.isPlaying) movementAudio.Play(0);
+
+                movementAudio.Stop();
+                animationController.SetBool("moving", false);
+                animationController.SetBool("TurningRight", false);
+                animationController.SetBool("TurningLeft", false);
+            }
         }
 
-        if(agent.velocity.y < -1f)
+    }
+    private void FixedUpdate()
+    {
+        if (agent.remainingDistance < agent.stoppingDistance)
         {
-            animationController.SetBool("TurningLeft", true);
+            agent.updateRotation = false;
+            // Determine which direction to rotate towards
+            Vector3 targetDirection = playerTarget.position - transform.position;
+
+            // The step size is equal to speed times frame time.
+            float singleStep = agent.angularSpeed * Time.deltaTime;
+
+            // Rotate the forward vector towards the target direction by one step
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+
+            // Calculate a rotation a step closer to the target and applies rotation to this object
+            transform.rotation = Quaternion.LookRotation(newDirection);
         }
         else
         {
-            animationController.SetBool("TurningRight", false);
+            agent.updateRotation = true;
         }
     }
 
@@ -75,7 +106,7 @@ public class AttackBotNavMovement : MonoBehaviour
 
     public bool IsMoving()
     {
-        return agent.velocity != new Vector3(0, 0, 0);
+        return agent.velocity.magnitude >= 1f;
     }
 
 }

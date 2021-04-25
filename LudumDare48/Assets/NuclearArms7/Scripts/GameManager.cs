@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 	private float currentTimeBetweenSpawns;
 
 	private GameObject player;
-	private CraigController craigController;
+	// private CraigController craigController;
 	public static GameManager instance = null;
 
 	private GameObject cameraObject;
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour {
 		player = GameObject.FindWithTag("Player");
 		cameraObject = GameObject.FindWithTag("MainCamera");
 		listener = cameraObject.GetComponent<AudioListener>();
-		craigController = player.GetComponent<CraigController>();
+		// craigController = player.GetComponent<CraigController>();
 		AS = GetComponent<AudioSource>();
 		lpFilter = GetComponent<AudioLowPassFilter>();
 
@@ -169,9 +169,9 @@ public class GameManager : MonoBehaviour {
 	// 	}
 	// }
 
-	private void SpawnWave(int currentLevel) {
-		spawnManager.SpawnWave(currentLevel);
-	}
+	// private void SpawnWave(int currentLevel) {
+	// 	spawnManager.SpawnWave(currentLevel);
+	// }
 
 	public void StartCutScene(int cutSceneIndex) {
 		AS.volume = volumeMax;
@@ -194,12 +194,12 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void CheckGameOver() {
-		if (SceneManager.GetActiveScene().name != "GameOverScreen" && !victory){
-			if (craigController.GetHealth() <= 0f){
-				loss = true;
-				SceneManager.LoadScene("GameOverScreen", LoadSceneMode.Single);
-			}
-		}
+		// if (SceneManager.GetActiveScene().name != "GameOverScreen" && !victory){
+		// 	if (craigController.GetHealth() <= 0f){
+		// 		loss = true;
+		// 		SceneManager.LoadScene("GameOverScreen", LoadSceneMode.Single);
+		// 	}
+		// }
 	}
 
 	public void Victory() {

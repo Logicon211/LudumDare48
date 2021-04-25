@@ -33,6 +33,8 @@ public class DialogOrbPickupController : MonoBehaviour
     private bool isTextVisible;
     private GameObject camera;
 
+    private Light lightSource;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -8,15 +8,22 @@ public class PodiumController : MonoBehaviour
     // How far above powerup floating text should be
     public Vector3 floatingTextOffset = new Vector3(0f, 2f, 0f);
 
+    public float bobDistance = 0.38f, bobSpeed = 2.99f;
+    public float rotationSpeed = 50f;
+
     public GameObject floatingTextPrefab;
     // Update to set the floating text above the powerup
     public string cantOpenDoorText = "Can't open door";
     public string openDoorText = "Press [E] to open door";
 
+    public GameObject diamond;
+
     private TextMesh textMesh;
     private GameObject floatingText;
     private bool isTextVisible;
     private GameObject player;
+    private float originalDiamondY;
+    
 
     private RoomManager roomManager;
 
@@ -28,12 +35,27 @@ public class PodiumController : MonoBehaviour
         roomManager = GameObject.FindObjectOfType<RoomManager>();
         player = GameObject.FindGameObjectWithTag("MainCamera");
         InitializeFloatingText();
+        this.originalDiamondY = diamond.transform.position.y;
+        HideDiamond();
     }
 
     // Update is called once per frame
     void Update()
     {
         TextFacePlayer(player.transform.position);
+        FloatAnimation();
+        if (!doorIsOpen && GameState.CanOpenDoor())
+        {
+            ShowDiamond();
+        }
+    }
+
+    void FloatAnimation()
+    {
+        diamond.transform.position = new Vector3(diamond.transform.position.x,
+            originalDiamondY + ((float)System.Math.Sin(bobSpeed * Time.time) * bobDistance),
+            diamond.transform.position.z);
+        diamond.transform.Rotate(0f, Time.deltaTime * rotationSpeed, 0f, Space.World);
     }
 
     void InitializeFloatingText()
@@ -74,6 +96,16 @@ public class PodiumController : MonoBehaviour
         floatingText.SetActive(false);
     }
 
+    public void ShowDiamond()
+    {
+        diamond.SetActive(true);
+    }
+
+    public void HideDiamond()
+    {
+        diamond.SetActive(false);
+    }
+
     public void OpenDoor()
     {
         if (GameState.CanOpenDoor())
@@ -81,6 +113,7 @@ public class PodiumController : MonoBehaviour
             roomManager.OpenDoor();
             doorIsOpen = true;
             HideFloatingText();
+            HideDiamond();
         }
         
     }

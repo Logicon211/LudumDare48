@@ -9,7 +9,7 @@ public class guncontroller : MonoBehaviour {
     private float reloadSpeed = 0.8f;
     private float reloadCooldown = 0f;
     private int gunDamage = 1;
-    private float hitForce = 1000f;
+    public float hitForce = 1000f;
 
 
     private Animator gunAnimator;

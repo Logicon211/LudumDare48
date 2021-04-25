@@ -33,9 +33,12 @@ public class DialogOrbPickupController : MonoBehaviour
     private bool isTextVisible;
     private GameObject camera;
 
+    private Light lightSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        lightSource = GetComponent<Light>();
         this.originalY = transform.position.y;
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         InitializeFloatingText();
@@ -84,16 +87,19 @@ public class DialogOrbPickupController : MonoBehaviour
             case ChoiceType.GOOD:
             {
                 gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+                lightSource.color = Color.green;
                 break;
             }
             case ChoiceType.OKAY:
             {
                 gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
+                lightSource.color = Color.yellow;
                 break;
             }
             case ChoiceType.BAD:
             {
                 gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+                lightSource.color = Color.red;
                 break;
             }
             default:

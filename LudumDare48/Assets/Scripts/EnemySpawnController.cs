@@ -21,8 +21,6 @@ public class EnemySpawnController : MonoBehaviour {
 
 	private GameObject player;
 
-	public Transform testSpawnPosition;
-
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");

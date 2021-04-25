@@ -10,7 +10,10 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
 
     public string targetTag = "Player";
     public string attackScriptName;
+    
     public GameObject target;
+    public AudioSource oneshotAudioSource;
+    public AudioClip deathAudio;
 
     float currentHealth;
     float currentAttackCooldown = 0f;
@@ -70,6 +73,7 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
 
     public void Kill()
     {
+        if (deathAudio != null && oneshotAudioSource != null) oneshotAudioSource.PlayOneShot(deathAudio);
         animator.SetTrigger("kill");
         NavMovement nav = GetComponent<NavMovement>();
         Rigidbody rb = GetComponent<Rigidbody>();

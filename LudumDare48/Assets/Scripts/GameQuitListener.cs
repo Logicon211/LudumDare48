@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameQuitListener : MonoBehaviour {
 
+	void Awake() {
+		DontDestroyOnLoad(this.gameObject);
+	}
 	// Use this for initialization
 	void Start () {
 		
@@ -11,8 +14,13 @@ public class GameQuitListener : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		if (Input.GetKey ("escape")) {
-			Application.Quit ();
-		}
+		// if (Input.GetKey ("escape")) {
+		// 	Application.Quit ();
+		// }
+	}
+
+	public void QuitGame() {
+		Debug.Log("BEING CALLED");
+		Application.Quit ();
 	}
 }

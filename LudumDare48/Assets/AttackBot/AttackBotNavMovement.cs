@@ -44,7 +44,7 @@ public class AttackBotNavMovement : MonoBehaviour
             {
                 animationController.SetBool("moving", true);
                 if (!movementAudio.isPlaying) movementAudio.Play(0);
-
+                /*
                 if (agent.velocity.y > 1f)
                 {
                     animationController.SetBool("TurningRight", true);
@@ -60,6 +60,7 @@ public class AttackBotNavMovement : MonoBehaviour
                     animationController.SetBool("TurningRight", false);
                     animationController.SetBool("TurningLeft", false);
                 }
+                */
             }
             else
             {
@@ -67,8 +68,8 @@ public class AttackBotNavMovement : MonoBehaviour
 
                 movementAudio.Stop();
                 animationController.SetBool("moving", false);
-                animationController.SetBool("TurningRight", false);
-                animationController.SetBool("TurningLeft", false);
+                //animationController.SetBool("TurningRight", false);
+                //animationController.SetBool("TurningLeft", false);
             }
         }
 

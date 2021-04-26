@@ -42,23 +42,25 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
         Vector3 rayOrigin = transform.position;
         Vector3 rayTarget = transform.forward * 50;
         // Cooldown check
-        if (currentAttackCooldown <= 0)
-        {
-            print("cooldown check passed");
-            // Range check
-            if (Vector3.Distance(transform.position, targetTransform.position) <= attackRange)
+        if (currentHealth > 0) {
+            if (currentAttackCooldown <= 0)
             {
-                print("distance check passed");
-                //RaycastHit hit;
-                //Vector3 rayOrigin = transform.position;
-                //Vector3 rayTarget = rayOrigin + new Vector3(50f, 0, 0);
-                if (Physics.Raycast(rayOrigin, rayTarget, out hit, 50f, layerMask))
+                print("cooldown check passed");
+                // Range check
+                if (Vector3.Distance(transform.position, targetTransform.position) <= attackRange)
                 {
-                    Debug.DrawRay(rayOrigin, hit.point, Color.grey, 10f);
-                    print("Raycast check passed");
-                    if (hit.transform.tag == "Player")
+                    print("distance check passed");
+                    //RaycastHit hit;
+                    //Vector3 rayOrigin = transform.position;
+                    //Vector3 rayTarget = rayOrigin + new Vector3(50f, 0, 0);
+                    if (Physics.Raycast(rayOrigin, rayTarget, out hit, 50f, layerMask))
                     {
-                        PerformAttack();
+                        Debug.DrawRay(rayOrigin, hit.point, Color.grey, 10f);
+                        print("Raycast check passed");
+                        if (hit.transform.tag == "Player")
+                        {
+                            PerformAttack();
+                        }
                     }
                 }
             }
@@ -76,6 +78,7 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
     void PerformAttack()
     {
         attackAudio.Play();
+        animator.SetTrigger("Attack");
         GameObject enemyattacksphere1 = Instantiate(enemyAttackSphere, leftGunArm.position, gameObject.transform.rotation) as GameObject;
         enemyattacksphere1.GetComponent<Rigidbody>().velocity = enemyattacksphere1.transform.forward * 10f;
 

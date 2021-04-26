@@ -45,8 +45,13 @@ public class IntroSpriteFlow : MonoBehaviour
 
 	public float initialInputLock = 0.5f;
 
+	public bool isFirstSceneReset = false;
 	void Start ()
 	{
+		if (isFirstSceneReset) {
+			GameState.ResetAllChoices();
+		}
+
 		GameState.CurrentScene = SceneManager.GetActiveScene().buildIndex;
 		//Screen.SetResolution (1400, 900, true);
 		spriteRenderer = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject

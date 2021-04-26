@@ -11,11 +11,23 @@ public class BackgroundSounds : MonoBehaviour
     public float currentSoundsTime = 10f;
 
     private AudioSource audioSource;
+    private GameObject roomManager;
+
+    private AudioLowPassFilter lowPassFilter;
+    private AudioReverbFilter reverbFilter;
+
+    public bool lowPassEnabled = true;
+    public bool reverbEnabled = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        roomManager = GameObject.FindWithTag("RoomManager");
+        audioSource = roomManager.GetComponent<AudioSource>();
+
+        lowPassFilter = roomManager.GetComponent<AudioLowPassFilter>();
+        reverbFilter = roomManager.GetComponent<AudioReverbFilter>();
+        // audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,7 +39,20 @@ public class BackgroundSounds : MonoBehaviour
             currentSoundsTime = soundsCooldown;
 
             AudioClip chosenReporterClip = sounds[Random.Range(0, sounds.Length)];
-            audioSource.PlayOneShot(chosenReporterClip);
+            if(!audioSource.isPlaying) {
+                if (lowPassEnabled) {
+                    lowPassFilter.enabled = true;
+                } else {
+                    lowPassFilter.enabled = false;
+                }
+
+                if (reverbEnabled) {
+                    reverbFilter.enabled = true;
+                } else {
+                    reverbFilter.enabled = false;
+                }
+                audioSource.PlayOneShot(chosenReporterClip);
+            }
         }
     }
 }

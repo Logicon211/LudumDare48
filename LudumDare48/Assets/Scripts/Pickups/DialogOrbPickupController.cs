@@ -39,10 +39,11 @@ public class DialogOrbPickupController : MonoBehaviour
     public float pulseSpeed = 3.0f;
   
     public float pulseMinimum = 1.0f;
-
+    private RoomManager roomManager;
     // Start is called before the first frame update
     void Start()
     {
+        roomManager = GameObject.FindObjectOfType<RoomManager>();
         lightSource = GetComponent<Light>();
         this.originalY = transform.position.y;
         camera = GameObject.FindGameObjectWithTag("MainCamera");
@@ -94,19 +95,25 @@ public class DialogOrbPickupController : MonoBehaviour
             case ChoiceType.GOOD:
             {
                 gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
-                lightSource.color = Color.green;
+                if (lightSource != null) {
+                    lightSource.color = Color.green;
+                }
                 break;
             }
             case ChoiceType.OKAY:
             {
                 gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
-                lightSource.color = Color.yellow;
+                if (lightSource != null) {
+                    lightSource.color = Color.yellow;
+                }
                 break;
             }
             case ChoiceType.BAD:
             {
                 gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
-                lightSource.color = Color.red;
+                if (lightSource != null) {
+                    lightSource.color = Color.red;
+                }
                 break;
             }
             default:
@@ -149,6 +156,7 @@ public class DialogOrbPickupController : MonoBehaviour
         }
 
         GameState.UpdateChoice(currentScene, choice);
+        roomManager.PlayPickupSound(choice);
     }
 
     public void ShowFloatingText()

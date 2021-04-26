@@ -6288,6 +6288,11 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 4157127889398210408}
+    - target: {fileID: 3034619449736581321, guid: addf303997d83f94f961cd46c9bb9b91,
+        type: 3}
+      propertyPath: initialTime
+      value: 145
+      objectReference: {fileID: 0}
     - target: {fileID: 3034619449736581326, guid: addf303997d83f94f961cd46c9bb9b91,
         type: 3}
       propertyPath: m_RootOrder

@@ -45,7 +45,6 @@ public class BackgroundSounds : MonoBehaviour
 
                 int chosen = Random.Range(0, lastCouple.Count);
                 AudioClip chosenClip = sounds[lastCouple[chosen]];
-            print("RNG value: " + chosen + "    Chosen from array: " + lastCouple[chosen]);
             //lastCouple.Remove(chosen);
             lastCouple.RemoveAt(chosen);
 

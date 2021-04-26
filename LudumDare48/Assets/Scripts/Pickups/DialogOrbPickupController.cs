@@ -40,9 +40,13 @@ public class DialogOrbPickupController : MonoBehaviour
   
     public float pulseMinimum = 1.0f;
     private RoomManager roomManager;
+
+    private CraigsChoiceInHand craigsHand;
+
     // Start is called before the first frame update
     void Start()
     {
+        craigsHand = GameObject.Find("CraigsChoice").GetComponent<CraigsChoiceInHand>();
         roomManager = GameObject.FindObjectOfType<RoomManager>();
         lightSource = GetComponent<Light>();
         this.originalY = transform.position.y;
@@ -156,6 +160,8 @@ public class DialogOrbPickupController : MonoBehaviour
         }
 
         GameState.UpdateChoice(currentScene, choice);
+        craigsHand.InitializeColor(choice);
+        craigsHand.EnableRenderer();
         roomManager.PlayPickupSound(choice);
     }
 

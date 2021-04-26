@@ -23,8 +23,6 @@ public class EnemyAttackSphereScript : MonoBehaviour, IDamageable<float>
         {
             player.Damage(2);
         }
-
-        print(other.gameObject);
         Destroy(gameObject);
     }
 

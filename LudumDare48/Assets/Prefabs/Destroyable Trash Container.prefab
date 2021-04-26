@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2022012519}
   - component: {fileID: 2022012520}
   - component: {fileID: 8245621580163347868}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: Destroyable Trash Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 103308459531246576}
   - component: {fileID: 6478866897185666332}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: One Shot Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 1174760881283072296, guid: 07a3de8d8463903418ca31b62888bd63,
         type: 3}
       propertyPath: m_Layer
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1174760881283072298, guid: 07a3de8d8463903418ca31b62888bd63,
         type: 3}

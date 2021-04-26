@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyAttackSphereScript : MonoBehaviour, IDamageable<float>
 {
+
+    public float damage = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class EnemyAttackSphereScript : MonoBehaviour, IDamageable<float>
         Player player = other.GetComponentInParent<Player>();
         if (player != null)
         {
-            player.Damage(2);
+            player.Damage(damage);
         }
         Destroy(gameObject);
     }

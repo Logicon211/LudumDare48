@@ -280,7 +280,7 @@ MonoBehaviour:
   leftGunArm: {fileID: 5072851542476567996}
   layerMask:
     serializedVersion: 2
-    m_Bits: 313111
+    m_Bits: 280343
   attackAudio: {fileID: 4777087865839937164}
   deathSound: {fileID: 8300000, guid: 42a4d3ed52b14b54db2882ecc405d48a, type: 3}
   walkSource: {fileID: 8921503697702084681}

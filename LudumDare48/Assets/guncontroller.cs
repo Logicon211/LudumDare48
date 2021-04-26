@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class guncontroller : MonoBehaviour { 
 
-    private float reloadSpeed = 0.8f;
+    public float reloadSpeed = 0.5f;
     private float reloadCooldown = 0f;
     private int gunDamage = 1;
     public float hitForce = 1000f;

@@ -60,6 +60,33 @@ public class NavMovement : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (!stopped)
+        {
+            if (agent.remainingDistance < agent.stoppingDistance)
+            {
+                agent.updateRotation = false;
+                // Determine which direction to rotate towards
+                Vector3 targetDirection = target.transform.position - transform.position;
+
+                // The step size is equal to speed times frame time.
+                float singleStep = agent.angularSpeed * Time.deltaTime;
+
+                // Rotate the forward vector towards the target direction by one step
+                Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+
+                // Calculate a rotation a step closer to the target and applies rotation to this object
+                transform.rotation = Quaternion.LookRotation(newDirection);
+            }
+            else
+            {
+                agent.updateRotation = true;
+            }
+        }
+
+    }
+
     public void Stop()
     {
         agent.speed = 0;

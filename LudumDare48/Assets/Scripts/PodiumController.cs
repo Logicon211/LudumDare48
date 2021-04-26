@@ -28,6 +28,7 @@ public class PodiumController : MonoBehaviour
     private RoomManager roomManager;
 
     private bool doorIsOpen = false;
+    public Target targetindicator;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class PodiumController : MonoBehaviour
         InitializeFloatingText();
         this.originalDiamondY = diamond.transform.position.y;
         HideDiamond();
+        //targetindicator = GetComponentInChildren<Target>();
     }
 
     // Update is called once per frame
@@ -99,11 +101,13 @@ public class PodiumController : MonoBehaviour
     public void ShowDiamond()
     {
         diamond.SetActive(true);
+        targetindicator.enabled = true;
     }
 
     public void HideDiamond()
     {
         diamond.SetActive(false);
+        targetindicator.enabled = false;
     }
 
     public void OpenDoor()

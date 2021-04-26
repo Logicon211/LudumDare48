@@ -16,6 +16,8 @@ public class DestroyableItemBase : MonoBehaviour, IDamageable<float>, IKillable
 
     bool destroyed = false;
 
+    public GameObject explosionEffect;
+
     void Start()
     {
         currentHealth = health;
@@ -39,6 +41,8 @@ public class DestroyableItemBase : MonoBehaviour, IDamageable<float>, IKillable
             spawner.UpdateList(gameObject);
         }
         oneShotAudioSource.PlayOneShot(destroyAudio);
+        Transform explosionTransform = gameObject.transform;
+        Instantiate(explosionEffect, gameObject.transform.position, Quaternion.identity);
         Destroy(itemObject);
         Destroy(gameObject, destroyAudio.length);
 

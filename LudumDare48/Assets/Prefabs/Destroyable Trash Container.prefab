@@ -62,8 +62,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   oneShotAudioSource: {fileID: 6478866897185666332}
-  destroyAudio: {fileID: 8300000, guid: ead92eacf85fb5b4796edc5edf913aad, type: 3}
+  destroyAudio: {fileID: 8300000, guid: 5c023adf17b0ca3438d40097c806e1da, type: 3}
   itemObject: {fileID: 2112330113952620488}
+  explosionEffect: {fileID: 5045198975135933104, guid: cb4c636e09a31954586aaea374493b30,
+    type: 3}
 --- !u!54 &2022012520
 Rigidbody:
   m_ObjectHideFlags: 0

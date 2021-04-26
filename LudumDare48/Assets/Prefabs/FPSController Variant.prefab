@@ -6892,6 +6892,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.099
       objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: MaxDistance
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_RunSpeed
       value: 8
@@ -6952,6 +6956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: layermask.m_Bits
       value: 64823
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766118048700103382, guid: 382258c58c0ab0e41bab206ed6377a97,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2766118048700103382, guid: 382258c58c0ab0e41bab206ed6377a97,
         type: 3}

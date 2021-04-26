@@ -29,6 +29,10 @@ public class IntroSpriteFlow : MonoBehaviour
 
 	public bool choiceSlidesEnabled;
 
+	// Debug variables
+	public bool forceChoice = false;
+	public int forceChoiceInt = 0;
+
 	private Sprite[][] choiceSpriteArray = new Sprite[3][];
 	private AudioClip[][] choiceVoiceArray  = new AudioClip[3][];
 
@@ -66,7 +70,11 @@ public class IntroSpriteFlow : MonoBehaviour
 			choiceVoiceArray[1] = voiceChoice1;
 			choiceVoiceArray[2] = voiceChoice2;
 
-			currentChoice = GameState.GetChoice(GameState.CurrentScene - 1);
+			if (!forceChoice) {
+				currentChoice = GameState.GetChoice(GameState.CurrentScene - 1);
+			} else {
+				currentChoice = forceChoiceInt;
+			}
 
 			// runningThroughChoiceSlide = true;
 			spriteRenderer.sprite = choiceSpriteArray[currentChoice][slideIndex];
@@ -108,6 +116,9 @@ public class IntroSpriteFlow : MonoBehaviour
 				if(slideIndex >= choiceSpriteArray[currentChoice].Length) {
 					choiceSlidesEnabled = false;
 					slideIndex = 0;
+					if(voiceLines.Length > slideIndex && voiceLines[slideIndex] != null) {
+						voiceAudioSource.PlayOneShot(voiceLines[slideIndex]);
+					}
 				}
 			} else {
 				if(slideIndex < slides.Length){

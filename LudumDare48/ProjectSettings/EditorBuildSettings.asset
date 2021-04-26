@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Levels/LoadingScene.unity
     guid: 341d782ee9704674c8d0df66362204bf
   - enabled: 1
+    path: Assets/Scenes/Final Levels/InbetweenRooms/Between0and1.unity
+    guid: 142da0b09681af545a26dd46be52341c
+  - enabled: 1
     path: Assets/Scenes/Final Levels/Rooms/Room 1.unity
     guid: 5df9bda48da93764d9547a1c7da81211
   - enabled: 1

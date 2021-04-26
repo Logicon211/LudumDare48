@@ -188,6 +188,11 @@ PrefabInstance:
       objectReference: {fileID: 1206836191}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
+      propertyPath: forceChoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
       propertyPath: levelToLoad
       value: Main Room Scene
       objectReference: {fileID: 0}
@@ -196,6 +201,11 @@ PrefabInstance:
       propertyPath: blackOutSquare
       value: 
       objectReference: {fileID: 1457184470}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: forceChoiceInt
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: initialInputLock
@@ -214,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: slides.Array.size
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -230,13 +240,13 @@ PrefabInstance:
         type: 3}
       propertyPath: slides.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 3df39b6beea378a4e929e935c183bc77,
+      objectReference: {fileID: 21300000, guid: c7b949b032368a14a85ca0c93952dbc9,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: slides.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 1c98673d776994149b67a8613af9fda0,
+      objectReference: {fileID: 21300000, guid: b44ad3a987ad5e748b62a6ec63c7d7cd,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -864,7 +874,7 @@ PrefabInstance:
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceLines.Array.size
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -1673,12 +1683,12 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceLines.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: de3f62be9b8dcf24ca1838e957bfb8dc, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceLines.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 8ade7d441c3939544a7308eb0e0bf11a, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceLines.Array.data[2]
@@ -1708,17 +1718,22 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceChoice0.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 1ee9fb895da756e4f8d81ea30cbab6e0, type: 3}
+      objectReference: {fileID: 8300000, guid: ab9c969b3114eb14b8b96003bd5f402d, type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: voiceChoice0.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ed45838749d56aa4a90ffccbfc94fbad, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice1.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 188d2eb44b881944e811fbd691153cb4, type: 3}
+      objectReference: {fileID: 8300000, guid: ab9c969b3114eb14b8b96003bd5f402d, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice1.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 20ecd109f83e161439384472db3d2473, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice1.Array.data[2]
@@ -1728,12 +1743,12 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceChoice2.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 704bf55ddc9fbb9439c149cb6abaa50e, type: 3}
+      objectReference: {fileID: 8300000, guid: ab9c969b3114eb14b8b96003bd5f402d, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice2.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: ebdc9ce01310a49429c14e8030c52102, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice2.Array.data[2]
@@ -1748,13 +1763,13 @@ PrefabInstance:
         type: 3}
       propertyPath: spriteChoice0.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: cd222699855205c419f46bf531833421,
+      objectReference: {fileID: 21300000, guid: 5fc8f79dc6bd64e4da1186a0e9f6677a,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: spriteChoice0.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: bca87a5b80828d140b283899b4ad7b0f,
+      objectReference: {fileID: 21300000, guid: 11227b1261347974d830aaf21f5abb54,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -1766,13 +1781,13 @@ PrefabInstance:
         type: 3}
       propertyPath: spriteChoice1.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: d3901d7b764e75a49b56111671941423,
+      objectReference: {fileID: 21300000, guid: 5fc8f79dc6bd64e4da1186a0e9f6677a,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: spriteChoice1.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: af9ce95808d7dd54890d08282d3ccbcd,
+      objectReference: {fileID: 21300000, guid: 6a80ccffceec1364cb3143ef127bd9c0,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -1784,13 +1799,13 @@ PrefabInstance:
         type: 3}
       propertyPath: spriteChoice2.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: d4b97f9a92866d84f97e1604c8732141,
+      objectReference: {fileID: 21300000, guid: 5fc8f79dc6bd64e4da1186a0e9f6677a,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: spriteChoice2.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 024bf46c6e324e0459b901ee75ab06ea,
+      objectReference: {fileID: 21300000, guid: 24787d2f0d5626b4ba81da96d023dc40,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}

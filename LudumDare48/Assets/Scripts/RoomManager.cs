@@ -9,6 +9,8 @@ public class RoomManager : MonoBehaviour
     public float initialTime = 10f;
     public BackgroundSounds backgroundSounds;
     
+    public AudioSource pickupAudioSource;
+
     private AudioSource audioSource;
     public AudioClip badPickupSound;
     public AudioClip okayPickupSound;
@@ -44,16 +46,17 @@ public class RoomManager : MonoBehaviour
     }
 
     public void PlayPickupSound(int pickupId) {
-        if(!audioSource.isPlaying) {
-            lowPassFilter.enabled = false;
-            reverbFilter.enabled = false;
-            if (pickupId == 0) {
-                audioSource.PlayOneShot(badPickupSound);
-            } else if(pickupId == 1) {
-                audioSource.PlayOneShot(okayPickupSound);
-            } else if(pickupId == 2) {
-                audioSource.PlayOneShot(goodPickupSound);
-            }
+        // if(!audioSource.isPlaying) {
+        audioSource.Stop();
+        // }
+        // lowPassFilter.enabled = false;
+        // reverbFilter.enabled = false;
+        if (pickupId == 0) {
+            pickupAudioSource.PlayOneShot(badPickupSound);
+        } else if(pickupId == 1) {
+            pickupAudioSource.PlayOneShot(okayPickupSound);
+        } else if(pickupId == 2) {
+            pickupAudioSource.PlayOneShot(goodPickupSound);
         }
     }
 }

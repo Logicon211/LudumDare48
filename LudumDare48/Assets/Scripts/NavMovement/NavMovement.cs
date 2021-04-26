@@ -21,6 +21,8 @@ public class NavMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animationController = GetComponentInChildren<Animator>();
         agent.speed = speed;
+        GameObject gameObject = GameObject.FindGameObjectWithTag(targetTag);
+        if (gameObject != null) target = gameObject;
     }
 
     // Update is called once per frame

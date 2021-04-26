@@ -365,7 +365,7 @@ MonoBehaviour:
   cooldown: 3
   attackRange: 5.5
   damage: 10
-  damageDelay: 0.8
+  damageDelay: 0.6
   attackAudio: {fileID: 1554437535}
   attackClip: {fileID: 8300000, guid: 7dc6ae0f9bc1262449a0c371450ebd8c, type: 3}
 --- !u!195 &4410884661994264936

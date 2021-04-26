@@ -7,7 +7,7 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
     private float health = 3f;
     private float attackRange = 50f;
     private float shotAngleHorizontal = 5f;
-    private float shotAngleVertical = 60f;
+    private float shotAngleVertical = 90f;
 
     private string targetTag = "Player";
 
@@ -52,17 +52,22 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
                     Vector3 toPosition = (rayPlayerTarget - transform.position);
                     float vertAngle = Vector3.SignedAngle(toPosition, transform.forward, Vector3.up);
                     //Are they within our verticle shot angle? (within 60 degrees)
+                    print("Vertangle: " + vertAngle);
                     if (Mathf.Abs(vertAngle) < shotAngleVertical)
                     {
-
+                        toPosition.y = 0;
                         float HoriAngle = Vector3.SignedAngle(toPosition, transform.forward, Vector3.right);
                         //Are they within out horizontal shot angle? (within 5 degrees)
+                        float angleToPosition = Vector3.Angle(transform.forward, toPosition);
+                        print("HoriAngle: " + vertAngle);
+                        print("angleToPosition: " + angleToPosition);
+                        
                         if (Mathf.Abs(HoriAngle) < shotAngleHorizontal) {
 
                             //Can we make the shot?
                             if (Physics.Raycast(rayOrigin, rayPlayerTarget - rayOrigin, out hit, 50f, layerMask))
                             {
-                                
+                                print("hit tag: " + hit.transform.tag);
                                 //Make sure we aren't shooting at a wall
                                 if (hit.transform.tag == "Player")
                                 {

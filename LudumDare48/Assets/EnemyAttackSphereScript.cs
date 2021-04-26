@@ -21,13 +21,9 @@ public class EnemyAttackSphereScript : MonoBehaviour, IDamageable<float>
         Player player = other.GetComponentInParent<Player>();
         if (player != null)
         {
-            print("Bullet ran into player");
             player.Damage(2);
         }
-        else
-        {
-            print("Bullet ran into object");
-        }
+
         print(other.gameObject);
         Destroy(gameObject);
     }
@@ -40,7 +36,7 @@ public class EnemyAttackSphereScript : MonoBehaviour, IDamageable<float>
     //If we don't collide with anything, let's despawn after 10 seconds to avoid laggin the game.
     private IEnumerator DespawnBullet()
     {
-        yield return new WaitForSeconds(60f); ;
+        yield return new WaitForSeconds(30f); ;
         print("despawning bullet due to time");
         Destroy(gameObject);   
     }

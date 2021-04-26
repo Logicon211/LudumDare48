@@ -92,10 +92,11 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
     {
         attackAudio.Play();
         animator.SetTrigger("Attack");
-        GameObject enemyattacksphere1 = Instantiate(enemyAttackSphere, leftGunArm.position, gameObject.transform.rotation) as GameObject;
+        Vector3 _direction = (targetTransform.position - transform.position).normalized;
+        GameObject enemyattacksphere1 = Instantiate(enemyAttackSphere, leftGunArm.position, Quaternion.LookRotation(_direction)) as GameObject;
         enemyattacksphere1.GetComponent<Rigidbody>().velocity = enemyattacksphere1.transform.forward * 10f;
 
-        GameObject enemyattacksphere2 = Instantiate(enemyAttackSphere, rightGunArm.position, gameObject.transform.rotation) as GameObject;
+        GameObject enemyattacksphere2 = Instantiate(enemyAttackSphere, rightGunArm.position, Quaternion.LookRotation(_direction)) as GameObject;
         enemyattacksphere2.GetComponent<Rigidbody>().velocity = enemyattacksphere2.transform.forward * 10f;
 
         currentAttackCooldown = attackCooldown;

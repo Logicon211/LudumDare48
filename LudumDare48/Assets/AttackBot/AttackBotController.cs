@@ -26,7 +26,9 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
     public Transform leftGunArm;
     public LayerMask layerMask;
     public AudioSource attackAudio;
+    public AudioClip deathSound;
     private Rigidbody rigidbody;
+    public AudioSource walkSource; //We just want this to play the death sound, late change, gross.
 
     void Start()
     {
@@ -52,22 +54,16 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
                     Vector3 toPosition = (rayPlayerTarget - transform.position);
                     float vertAngle = Vector3.SignedAngle(toPosition, transform.forward, Vector3.up);
                     //Are they within our verticle shot angle? (within 60 degrees)
-                    print("Vertangle: " + vertAngle);
                     if (Mathf.Abs(vertAngle) < shotAngleVertical)
                     {
                         toPosition.y = 0;
-                        float HoriAngle = Vector3.SignedAngle(toPosition, transform.forward, Vector3.right);
                         //Are they within out horizontal shot angle? (within 5 degrees)
                         float angleToPosition = Vector3.Angle(transform.forward, toPosition);
-                        print("HoriAngle: " + vertAngle);
-                        print("angleToPosition: " + angleToPosition);
-                        
-                        if (Mathf.Abs(HoriAngle) < shotAngleHorizontal) {
+                        if (Mathf.Abs(angleToPosition) < shotAngleHorizontal) {
 
                             //Can we make the shot?
                             if (Physics.Raycast(rayOrigin, rayPlayerTarget - rayOrigin, out hit, 50f, layerMask))
                             {
-                                print("hit tag: " + hit.transform.tag);
                                 //Make sure we aren't shooting at a wall
                                 if (hit.transform.tag == "Player")
                                 {
@@ -92,10 +88,11 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
     {
         attackAudio.Play();
         animator.SetTrigger("Attack");
-        GameObject enemyattacksphere1 = Instantiate(enemyAttackSphere, leftGunArm.position, gameObject.transform.rotation) as GameObject;
+        Vector3 _direction = (targetTransform.position - transform.position).normalized;
+        GameObject enemyattacksphere1 = Instantiate(enemyAttackSphere, leftGunArm.position, Quaternion.LookRotation(_direction)) as GameObject;
         enemyattacksphere1.GetComponent<Rigidbody>().velocity = enemyattacksphere1.transform.forward * 10f;
 
-        GameObject enemyattacksphere2 = Instantiate(enemyAttackSphere, rightGunArm.position, gameObject.transform.rotation) as GameObject;
+        GameObject enemyattacksphere2 = Instantiate(enemyAttackSphere, rightGunArm.position, Quaternion.LookRotation(_direction)) as GameObject;
         enemyattacksphere2.GetComponent<Rigidbody>().velocity = enemyattacksphere2.transform.forward * 10f;
 
         currentAttackCooldown = attackCooldown;
@@ -120,7 +117,9 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
     public void Kill()
     {
         animator.SetTrigger("Death");
-        NavMovement nav = GetComponent<NavMovement>();
+        walkSource.Stop();
+        walkSource.PlayOneShot(deathSound);
+        AttackBotNavMovement nav = GetComponent<AttackBotNavMovement>();
         Rigidbody rb = GetComponent<Rigidbody>();
         if (nav != null) nav.Stop();
         if (rb != null) rb.velocity = Vector3.zero;

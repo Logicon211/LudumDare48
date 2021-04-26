@@ -16,6 +16,7 @@ public class AttackBotNavMovement : MonoBehaviour
     public Transform playerTarget;
     public Animator animationController;
 
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -27,13 +28,13 @@ public class AttackBotNavMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         // Updating target position
         if (!stopped)
         {
-            Transform goal = playerTarget;
-            agent.destination = goal.position;
+            UpdateAnimation();
+            agent.destination = playerTarget.position;
         }
-        UpdateAnimation();
     }
 
     void UpdateAnimation()
@@ -76,25 +77,29 @@ public class AttackBotNavMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (agent.remainingDistance < agent.stoppingDistance)
+        if (!stopped)
         {
-            agent.updateRotation = false;
-            // Determine which direction to rotate towards
-            Vector3 targetDirection = playerTarget.position - transform.position;
+            if (agent.remainingDistance < agent.stoppingDistance)
+            {
+                agent.updateRotation = false;
+                // Determine which direction to rotate towards
+                Vector3 targetDirection = playerTarget.position - transform.position;
 
-            // The step size is equal to speed times frame time.
-            float singleStep = agent.angularSpeed * Time.deltaTime;
+                // The step size is equal to speed times frame time.
+                float singleStep = agent.angularSpeed * Time.deltaTime;
 
-            // Rotate the forward vector towards the target direction by one step
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+                // Rotate the forward vector towards the target direction by one step
+                Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
 
-            // Calculate a rotation a step closer to the target and applies rotation to this object
-            transform.rotation = Quaternion.LookRotation(newDirection);
+                // Calculate a rotation a step closer to the target and applies rotation to this object
+                transform.rotation = Quaternion.LookRotation(newDirection);
+            }
+            else
+            {
+                agent.updateRotation = true;
+            }
         }
-        else
-        {
-            agent.updateRotation = true;
-        }
+
     }
 
     public void Stop()
@@ -102,6 +107,7 @@ public class AttackBotNavMovement : MonoBehaviour
         agent.speed = 0;
         agent.destination = gameObject.transform.position;
         stopped = true;
+        agent.updateRotation = false;
 
     }
 

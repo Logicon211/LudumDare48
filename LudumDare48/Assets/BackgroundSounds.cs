@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class BackgroundSounds : MonoBehaviour
 {
     public AudioClip[] sounds;
@@ -16,8 +18,8 @@ public class BackgroundSounds : MonoBehaviour
     
     public List<int> lastCouple;
     private int soundcliplengths;
-    // private AudioLowPassFilter lowPassFilter;
-    // private AudioReverbFilter reverbFilter;
+    private AudioLowPassFilter lowPassFilter;
+    private AudioReverbFilter reverbFilter;
 
     // public bool lowPassEnabled = true;
     // public bool reverbEnabled = true;
@@ -31,9 +33,46 @@ public class BackgroundSounds : MonoBehaviour
         soundcliplengths = sounds.Length;
         resetList();
 
-        // lowPassFilter = roomManagerObject.GetComponent<AudioLowPassFilter>();
-        // reverbFilter = roomManagerObject.GetComponent<AudioReverbFilter>();
+        lowPassFilter = roomManagerObject.GetComponent<AudioLowPassFilter>();
+        //reverbFilter = roomManagerObject.GetComponent<AudioReverbFilter>();
+
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        print("CurrentScene: " + currentScene);
+
+        if(currentScene == 3)
+        {
+            lowPassFilter.cutoffFrequency = 5000;
+            //reverbFilter.room = 0;
+        }
+        else if (currentScene == 5)
+        {
+            lowPassFilter.cutoffFrequency = 4000;
+        }
+        else if (currentScene == 7)
+        {
+            lowPassFilter.cutoffFrequency = 3000;
+        }
+        else if (currentScene == 9)
+        {
+            lowPassFilter.cutoffFrequency = 2000;
+        }
+        else if (currentScene == 11)
+        {
+            lowPassFilter.cutoffFrequency = 1500;
+        }
+        else if (currentScene == 13)
+        {
+            lowPassFilter.cutoffFrequency = 1000;
+        }
+        else if (currentScene == 15)
+        {
+            lowPassFilter.cutoffFrequency = 900;
+        }
+
+
+        reverbFilter = roomManagerObject.GetComponent<AudioReverbFilter>();
         // audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -67,8 +106,9 @@ public class BackgroundSounds : MonoBehaviour
                 // } else {
                 //     reverbFilter.enabled = false;
                 // }
-               
+
                 // audioSource.PlayOneShot(chosenReporterClip);
+                //AudioReverbFilter reverb = reverb.
                 audioSource.clip = chosenClip;
                 audioSource.Play();
             }

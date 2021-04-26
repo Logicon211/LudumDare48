@@ -513,6 +513,11 @@ PrefabInstance:
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4410884661994264936, guid: 9e929ac47eaf8464aa76ac71a9aa1478,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4410884661994264938, guid: 9e929ac47eaf8464aa76ac71a9aa1478,
         type: 3}
       propertyPath: speed

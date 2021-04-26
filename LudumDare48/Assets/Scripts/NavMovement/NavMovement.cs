@@ -51,7 +51,6 @@ public class NavMovement : MonoBehaviour
                     if (!movementAudio.isPlaying) movementAudio.Play(0);
                 }
                 animationController.SetBool("moving", true);
-                animationController.SetFloat("walkMoveSpeed", speed / 2);
             }
             else
             {

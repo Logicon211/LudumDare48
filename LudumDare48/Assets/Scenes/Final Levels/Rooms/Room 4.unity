@@ -8083,16 +8083,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 132480404351465604, guid: ce047816e6aa41b459179ee4f0898415,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 132480404351465604, guid: ce047816e6aa41b459179ee4f0898415,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 132480404823377778, guid: ce047816e6aa41b459179ee4f0898415,
         type: 3}
       propertyPath: m_Name
@@ -8151,16 +8141,6 @@ PrefabInstance:
     - target: {fileID: 132480404823546706, guid: ce047816e6aa41b459179ee4f0898415,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 132480404825185938, guid: ce047816e6aa41b459179ee4f0898415,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 132480404825185938, guid: ce047816e6aa41b459179ee4f0898415,
-        type: 3}
-      propertyPath: rolloffMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

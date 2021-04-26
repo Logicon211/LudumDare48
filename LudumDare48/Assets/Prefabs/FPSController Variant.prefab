@@ -5621,7 +5621,7 @@ MonoBehaviour:
   initialTime: 0
   healthbar: {fileID: 7924875273619528075}
   hurtAudioSource: {fileID: 4531475477289697567}
-  hurtSound: {fileID: 8300000, guid: 4f671ceaeea6cdc4caaab28139d41a8a, type: 3}
+  hurtSound: {fileID: 8300000, guid: 1822152616f5dc14b9e67a6753af2db0, type: 3}
 --- !u!1 &2100706399367741325
 GameObject:
   m_ObjectHideFlags: 0
@@ -6942,7 +6942,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nobabies
       value: 
-      objectReference: {fileID: 8300000, guid: 5c8abee540a61554ea44e7a97e85b087, type: 3}
+      objectReference: {fileID: 8300000, guid: e0bcd718872ed3e4e8c1efdad807c473, type: 3}
     - target: {fileID: 2766118048700103378, guid: 382258c58c0ab0e41bab206ed6377a97,
         type: 3}
       propertyPath: otherHit

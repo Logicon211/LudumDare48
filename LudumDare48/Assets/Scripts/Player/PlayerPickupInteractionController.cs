@@ -13,10 +13,11 @@ public class PlayerPickupInteractionController : MonoBehaviour
     private DialogOrbPickupController lookingAt;
     private GameObject lookingAtGameObject;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

@@ -26,6 +26,7 @@ public class PodiumController : MonoBehaviour
     
 
     private RoomManager roomManager;
+    private CraigsChoiceInHand craigsHand;
 
     private bool doorIsOpen = false;
     public Target targetindicator;
@@ -33,6 +34,7 @@ public class PodiumController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        craigsHand = GameObject.Find("CraigsChoice").GetComponent<CraigsChoiceInHand>();
         roomManager = GameObject.FindObjectOfType<RoomManager>();
         player = GameObject.FindGameObjectWithTag("MainCamera");
         InitializeFloatingText();
@@ -118,6 +120,7 @@ public class PodiumController : MonoBehaviour
             doorIsOpen = true;
             HideFloatingText();
             HideDiamond();
+            craigsHand.DisableRenderer();
         }
         
     }

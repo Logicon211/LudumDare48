@@ -78,4 +78,23 @@ public static class GameState
         UpdateChoice(currentScene, 3);
     }
 
+    private static int GetTotalPoints() {
+        int total = 0;
+        foreach(KeyValuePair<int,int> sceneValue in choices) {
+            total += sceneValue.Value + 1;
+        }   
+        Debug.Log("Total points: " + total);
+        return total;
+    }
+
+    public static int GetEndingValue() {
+        int score = GetTotalPoints(); 
+        if(score < 14) {
+            return 0;
+        } else if(score >= 14 && score < 18) {
+            return 1;
+        } else {
+            return 2;
+        }
+    }
 }

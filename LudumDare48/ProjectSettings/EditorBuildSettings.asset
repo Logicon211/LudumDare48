@@ -54,11 +54,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Levels/Rooms/Room 7.unity
     guid: 143657bec9e809d4098a1d72025e8f69
   - enabled: 1
+    path: Assets/Scenes/Final Levels/InbetweenRooms/Between7andBadEnding.unity
+    guid: 4cfd2012fd0b3454d99e1196f5f0458d
+  - enabled: 1
     path: Assets/Scenes/Final Levels/InbetweenRooms/Between7andMidEnding.unity
     guid: 1d9d432dfcdf017429cf7f15eb3f1949
   - enabled: 1
-    path: Assets/Scenes/Final Levels/Rooms/unneeded.unity
-    guid: 4a36d1e3f62b8464bb55be575ce964ef
+    path: Assets/Scenes/Final Levels/InbetweenRooms/Between7andGoodEnding.unity
+    guid: d5c7dcee65c063944970628ba48126ca
   - enabled: 1
     path: Assets/Scenes/Final Levels/VictoryScene.unity
     guid: 5bc1ed12e7f08d14fa251f33f6fe273c

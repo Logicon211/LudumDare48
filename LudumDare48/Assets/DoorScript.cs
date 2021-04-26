@@ -40,8 +40,10 @@ public class DoorScript : MonoBehaviour
             if(!finalDoor) {
                 SceneManager.LoadScene(GameState.CurrentScene + 1);
             } else {
-                // TODO: Pick Correct scene. Bad +1, Mid +2, Good +3
-                SceneManager.LoadScene(GameState.CurrentScene + 1);
+                // Ending: Bad 0, Mid 1, Good 2
+                int endingValue = GameState.GetEndingValue();
+                // +1 for scene index increase
+                SceneManager.LoadScene(GameState.CurrentScene + endingValue + 1);
             }
         }
 

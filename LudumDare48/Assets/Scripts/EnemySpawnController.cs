@@ -18,8 +18,10 @@ public class EnemySpawnController : MonoBehaviour {
 	public float spawnInterval = 10f;
 	public float currentTime = 50f;
 	public GameObject enemy;
+	public GameObject smokePoof;
 
 	private GameObject player;
+
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +50,7 @@ public class EnemySpawnController : MonoBehaviour {
 
 		Vector3 position = new Vector3 (xPos, yPos, zPos);
 		Quaternion rotation = Quaternion.Euler (0f, 0f, 0f/*Random.Range (0f, 360f)*/);
+		Instantiate (smokePoof, position, rotation);
 		Instantiate (enemyToSpawn, position, rotation);
 	}
 

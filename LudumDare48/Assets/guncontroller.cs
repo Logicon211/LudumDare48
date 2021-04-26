@@ -22,6 +22,7 @@ public class guncontroller : MonoBehaviour {
     public LayerMask layermask;
     public GameObject enemyHit;
     public GameObject otherHit;
+    public AudioClip nobabies;
 
 
     // Start is called before the first frame update
@@ -39,33 +40,40 @@ public class guncontroller : MonoBehaviour {
     {
         if (reloadCooldown <= 0f && CrossPlatformInputManager.GetButtonDown("Fire1"))
         {
-            StartCoroutine(ShotEffect());
-
             Vector3 rayOrigin = playerCamera.ViewportToWorldPoint(new Vector3(.5f, .5f, 0));
             RaycastHit hit;
 
             gunshottrail.SetPosition(0, bulletSpawnPoint.position);
             if (Physics.Raycast(rayOrigin, playerCamera.transform.forward, out hit, 200f, layermask))
             {
-                gunshottrail.SetPosition(1, hit.point);
-
-
-                Shootable health = hit.collider.GetComponent<Shootable>();
-                if (health != null)
+                // We don't shoot babies
+                if (hit.transform.tag != "Baby")
                 {
-                    health.Damage();
-                }
+                    StartCoroutine(ShotEffect());
+                    gunshottrail.SetPosition(1, hit.point);
 
-                if (hit.rigidbody != null)
-                {
-                    hit.rigidbody.AddForce(-hit.normal * hitForce);
+                    Shootable health = hit.collider.GetComponent<Shootable>();
+                    if (health != null)
+                    {
+                        health.Damage();
+                    }
+
+                    if (hit.rigidbody != null)
+                    {
+                        hit.rigidbody.AddForce(-hit.normal * hitForce);
+                    }
+                    Instantiate(enemyHit, hit.point, Quaternion.identity);
                 }
-                Instantiate(enemyHit, hit.point, Quaternion.identity);
+                else
+                {
+                    gunSound.PlayOneShot(nobabies);
+                    reloadCooldown = reloadSpeed;
+                }
             }
-        
             else
             {
                 gunshottrail.SetPosition(1, rayOrigin + playerCamera.transform.forward * 200);
+                StartCoroutine(ShotEffect());
             }
 
 

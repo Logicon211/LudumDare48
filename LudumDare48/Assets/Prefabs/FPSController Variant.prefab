@@ -6940,6 +6940,11 @@ PrefabInstance:
       objectReference: {fileID: 100006, guid: 2e7e92bc7175b744ea40878dedfa79e4, type: 3}
     - target: {fileID: 2766118048700103378, guid: 382258c58c0ab0e41bab206ed6377a97,
         type: 3}
+      propertyPath: nobabies
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c8abee540a61554ea44e7a97e85b087, type: 3}
+    - target: {fileID: 2766118048700103378, guid: 382258c58c0ab0e41bab206ed6377a97,
+        type: 3}
       propertyPath: otherHit
       value: 
       objectReference: {fileID: 100014, guid: 5332791ebce075d4a9e56f4581e7fb47, type: 3}

@@ -28,7 +28,7 @@ public class RandomStuffSpawner : MonoBehaviour
 
     void SpawnObject()
     {
-        GameObject newObject = Instantiate(objectToSpawn, transform);
+        GameObject newObject = Instantiate(objectToSpawn, transform.position, Quaternion.Euler(new Vector3(45, 0, 0)));
         objects.Add(newObject);
         DestroyableItemBase destroyableItemBase = newObject.GetComponent<DestroyableItemBase>();
         destroyableItemBase.SetSpawner(gameObject.GetComponent<RandomStuffSpawner>());

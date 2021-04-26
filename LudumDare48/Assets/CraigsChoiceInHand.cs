@@ -56,11 +56,13 @@ public class CraigsChoiceInHand : MonoBehaviour
 
     public void EnableRenderer() {
         meshRenderer.enabled = true;
+        lightSource.enabled = true;
         particleSystemObj.SetActive(true);
     }
 
     public void DisableRenderer() {
         meshRenderer.enabled = false;
+        lightSource.enabled = false;
         particleSystemObj.SetActive(false);
     }
 }

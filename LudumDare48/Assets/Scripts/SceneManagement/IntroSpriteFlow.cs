@@ -46,6 +46,9 @@ public class IntroSpriteFlow : MonoBehaviour
 
 	// private bool runningThroughChoiceSlide = false;
 	private int currentChoice;
+	
+	//Normally we go back and check the last scene, but for the final ending choice we need to be able to go back more 
+	public int lastChoiceOffset = 1;
 
 	public float initialInputLock = 0.5f;
 
@@ -71,7 +74,7 @@ public class IntroSpriteFlow : MonoBehaviour
 			choiceVoiceArray[2] = voiceChoice2;
 
 			if (!forceChoice) {
-				currentChoice = GameState.GetChoice(GameState.CurrentScene - 1);
+				currentChoice = GameState.GetChoice(GameState.CurrentScene - lastChoiceOffset);
 			} else {
 				currentChoice = forceChoiceInt;
 			}

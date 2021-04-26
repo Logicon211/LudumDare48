@@ -219,7 +219,7 @@ PrefabInstance:
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: slides.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -289,7 +289,7 @@ PrefabInstance:
         type: 3}
       propertyPath: slides.Array.data[9]
       value: 
-      objectReference: {fileID: 21300000, guid: afaa95978b1ff9d4eb49f858893bcb44,
+      objectReference: {fileID: 21300000, guid: 9095acc5e1cfff04183b222003aefc82,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -354,6 +354,12 @@ PrefabInstance:
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: slides.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: afaa95978b1ff9d4eb49f858893bcb44,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: slides.Array.data[11]
       value: 
       objectReference: {fileID: 21300000, guid: 75080ab08e82d1e4fabd73342184d5ec,
         type: 3}
@@ -1747,7 +1753,7 @@ PrefabInstance:
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: slideToStopMusicAndJingle
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}

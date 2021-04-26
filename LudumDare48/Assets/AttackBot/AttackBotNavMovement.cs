@@ -7,7 +7,7 @@ public class AttackBotNavMovement : MonoBehaviour
 {
 
     public string targetTag = "Player";
-    public float speed = 3;
+    public float speed = 4;
 
     bool stopped = false;
 
@@ -28,14 +28,23 @@ public class AttackBotNavMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         // Updating target position
         if (!stopped)
         {
             UpdateAnimation();
+            if (Vector3.Distance(transform.position, playerTarget.position) <= 50)
+            {
+                agent.speed = speed;
+            }
+            else
+            {
+                agent.speed = speed * 2;
+            }
             agent.destination = playerTarget.position;
         }
     }
+
 
     void UpdateAnimation()
     {

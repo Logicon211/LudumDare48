@@ -14,6 +14,7 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
     float currentHealth;
     float currentAttackCooldown = 0f;
     float attackCooldown = 2f;
+    float shotSpeed = 14;
 
     Transform targetTransform;
     Animator animator;
@@ -90,10 +91,10 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
         animator.SetTrigger("Attack");
         Vector3 _direction = (targetTransform.position - transform.position).normalized;
         GameObject enemyattacksphere1 = Instantiate(enemyAttackSphere, leftGunArm.position, Quaternion.LookRotation(_direction)) as GameObject;
-        enemyattacksphere1.GetComponent<Rigidbody>().velocity = enemyattacksphere1.transform.forward * 10f;
+        enemyattacksphere1.GetComponent<Rigidbody>().velocity = enemyattacksphere1.transform.forward * shotSpeed;
 
         GameObject enemyattacksphere2 = Instantiate(enemyAttackSphere, rightGunArm.position, Quaternion.LookRotation(_direction)) as GameObject;
-        enemyattacksphere2.GetComponent<Rigidbody>().velocity = enemyattacksphere2.transform.forward * 10f;
+        enemyattacksphere2.GetComponent<Rigidbody>().velocity = enemyattacksphere2.transform.forward * shotSpeed;
 
         currentAttackCooldown = attackCooldown;
     }

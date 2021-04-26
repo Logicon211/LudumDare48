@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class DontDestroyMusicOnLoad : MonoBehaviour
 {
+    public bool destroyOtherMusicPlayers = false;
     void Awake() 
     {
 
         GameObject[] objs = GameObject.FindGameObjectsWithTag("GlobalMusic");
 
-        if (objs.Length > 1)
-        {
-            Destroy(this.gameObject);
+        if (destroyOtherMusicPlayers) {
+            foreach (var musicPlayer in objs) {
+                if (musicPlayer != this.gameObject) {
+                    Destroy(musicPlayer);
+                }
+            }
+        } else {
+            if (objs.Length > 1)
+            {
+                Destroy(this.gameObject);
+            }
         }
         DontDestroyOnLoad(this.gameObject);
     }

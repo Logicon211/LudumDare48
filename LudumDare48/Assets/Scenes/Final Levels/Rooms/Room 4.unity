@@ -7577,6 +7577,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallGrouping
       objectReference: {fileID: 0}
+    - target: {fileID: 6402573781108643775, guid: 986a8fb4234cd8f4e995aa9d70e270dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 986a8fb4234cd8f4e995aa9d70e270dd, type: 3}
 --- !u!114 &1768178157 stripped

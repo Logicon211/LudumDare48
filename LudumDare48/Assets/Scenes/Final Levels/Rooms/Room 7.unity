@@ -2451,6 +2451,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 695987077030114908, guid: 986a8fb4234cd8f4e995aa9d70e270dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1692742277174152153, guid: 986a8fb4234cd8f4e995aa9d70e270dd,
         type: 3}
       propertyPath: finalDoor
@@ -2515,6 +2520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallGrouping
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402573781108643775, guid: 986a8fb4234cd8f4e995aa9d70e270dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 986a8fb4234cd8f4e995aa9d70e270dd, type: 3}

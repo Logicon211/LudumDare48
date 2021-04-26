@@ -9,6 +9,8 @@ public class DoorScript : MonoBehaviour
     public Light lightSource;
     public GameObject door;
 
+    public bool finalDoor = false;
+
     private AudioSource audioSource;
 
     private bool isDoorOpen;
@@ -35,7 +37,12 @@ public class DoorScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player") && isDoorOpen) {
-            SceneManager.LoadScene(GameState.CurrentScene + 1);
+            if(!finalDoor) {
+                SceneManager.LoadScene(GameState.CurrentScene + 1);
+            } else {
+                // TODO: Pick Correct scene. Bad +1, Mid +2, Good +3
+                SceneManager.LoadScene(GameState.CurrentScene + 1);
+            }
         }
 
     }

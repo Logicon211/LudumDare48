@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
-  attackRange: 7
+  attackRange: 6
   damage: 10
   damageDelay: 0.5
   attackAudio: {fileID: 229607831}

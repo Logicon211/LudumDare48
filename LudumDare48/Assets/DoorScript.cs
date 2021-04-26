@@ -14,6 +14,7 @@ public class DoorScript : MonoBehaviour
     private AudioSource audioSource;
 
     private bool isDoorOpen;
+    public Target doorTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class DoorScript : MonoBehaviour
             door.GetComponent<Animation>().Play("open");
             lightSource.enabled = true;
             isDoorOpen = true;
+            doorTarget.enabled = true;
         }
     }
 

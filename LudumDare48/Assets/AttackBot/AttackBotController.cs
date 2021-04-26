@@ -6,6 +6,8 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
 {
     private float health = 3f;
     private float attackRange = 50f;
+    private float shotAngleHorizontal = 5f;
+    private float shotAngleVertical = 60f;
 
     private string targetTag = "Player";
 
@@ -31,8 +33,7 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
         currentHealth = health;
         attack = GetComponent<IAttack<Animator, GameObject>>();
         animator = GetComponentInChildren<Animator>();
-        GameObject possibleTarget = GameObject.FindGameObjectWithTag(targetTag);
-        targetTransform = possibleTarget.GetComponent<Transform>();
+        targetTransform = GameObject.FindGameObjectWithTag(targetTag).transform;
         rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -40,39 +41,46 @@ public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
     {
         RaycastHit hit;
         Vector3 rayOrigin = transform.position;
-        Vector3 rayTarget = transform.forward * 50;
+        Vector3 rayPlayerTarget = targetTransform.position;
         // Cooldown check
         if (currentHealth > 0) {
             if (currentAttackCooldown <= 0)
             {
-                print("cooldown check passed");
                 // Range check
-                if (Vector3.Distance(transform.position, targetTransform.position) <= attackRange)
-                {
-                    print("distance check passed");
-                    //RaycastHit hit;
-                    //Vector3 rayOrigin = transform.position;
-                    //Vector3 rayTarget = rayOrigin + new Vector3(50f, 0, 0);
-                    if (Physics.Raycast(rayOrigin, rayTarget, out hit, 50f, layerMask))
+                if (Vector3.Distance(rayOrigin, rayPlayerTarget) <= attackRange)
+                {    
+                    Vector3 toPosition = (rayPlayerTarget - transform.position);
+                    float vertAngle = Vector3.SignedAngle(toPosition, transform.forward, Vector3.up);
+                    //Are they within our verticle shot angle? (within 60 degrees)
+                    if (Mathf.Abs(vertAngle) < shotAngleVertical)
                     {
-                        Debug.DrawRay(rayOrigin, hit.point, Color.grey, 10f);
-                        print("Raycast check passed");
-                        if (hit.transform.tag == "Player")
-                        {
-                            PerformAttack();
+
+                        float HoriAngle = Vector3.SignedAngle(toPosition, transform.forward, Vector3.right);
+                        //Are they within out horizontal shot angle? (within 5 degrees)
+                        if (Mathf.Abs(HoriAngle) < shotAngleHorizontal) {
+
+                            //Can we make the shot?
+                            if (Physics.Raycast(rayOrigin, rayPlayerTarget - rayOrigin, out hit, 50f, layerMask))
+                            {
+                                
+                                //Make sure we aren't shooting at a wall
+                                if (hit.transform.tag == "Player")
+                                {
+                                    PerformAttack();
+                                    Debug.DrawRay(rayOrigin, rayPlayerTarget - rayOrigin, Color.grey, 10f);
+                                }
+                            } 
                         }
                     }
                 }
             }
         }
-        Debug.DrawRay(rayOrigin, rayTarget, Color.cyan);
+        Debug.DrawRay(rayOrigin, rayPlayerTarget - rayOrigin, Color.cyan);
     }
 
     void FixedUpdate()
     {
         if (currentAttackCooldown > 0f) currentAttackCooldown -= Time.deltaTime;
-
-        print("attack cooldown: " + currentAttackCooldown);
     }
 
     void PerformAttack()

@@ -26,7 +26,7 @@ public class EnemyControllerBase: MonoBehaviour, IDamageable<float>, IKillable
     public bool testDamage = false;
 
     private bool kinematic = false;
-    private float kinematicCoolDown = 1f;
+    private float kinematicCoolDown = 0.25f;
     private float currentKinematicTime = 0f;
 
     private Rigidbody rigidbody;

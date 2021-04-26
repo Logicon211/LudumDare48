@@ -13,7 +13,9 @@ public class BackgroundSounds : MonoBehaviour
     private AudioSource audioSource;
     private GameObject roomManagerObject;
     private RoomManager roomManager;
-
+    
+    public List<int> lastCouple;
+    private int soundcliplengths;
     // private AudioLowPassFilter lowPassFilter;
     // private AudioReverbFilter reverbFilter;
 
@@ -26,6 +28,8 @@ public class BackgroundSounds : MonoBehaviour
         roomManagerObject = GameObject.FindWithTag("RoomManager");
         roomManager = roomManagerObject.GetComponent<RoomManager>();
         audioSource = roomManagerObject.GetComponent<AudioSource>();
+        soundcliplengths = sounds.Length;
+        resetList();
 
         // lowPassFilter = roomManagerObject.GetComponent<AudioLowPassFilter>();
         // reverbFilter = roomManagerObject.GetComponent<AudioReverbFilter>();
@@ -35,12 +39,23 @@ public class BackgroundSounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentSoundsTime -= Time.deltaTime;
 
         if(currentSoundsTime <= 0) {
             currentSoundsTime = soundsCooldown;
 
-            AudioClip chosenClip = sounds[Random.Range(0, sounds.Length)];
+                int chosen = Random.Range(0, lastCouple.Count);
+                AudioClip chosenClip = sounds[lastCouple[chosen]];
+            print("RNG value: " + chosen + "    Chosen from array: " + lastCouple[chosen]);
+            //lastCouple.Remove(chosen);
+            lastCouple.RemoveAt(chosen);
+
+            if (lastCouple.Count == 0) {
+                    resetList();
+                }
+
+
+
+            // AudioClip chosenClip = sounds[Random.Range(0, sounds.Length)];
             if(!audioSource.isPlaying && !roomManager.pickupAudioSource.isPlaying) {
                 // if (lowPassEnabled) {
                 //     lowPassFilter.enabled = true;
@@ -59,5 +74,15 @@ public class BackgroundSounds : MonoBehaviour
                 audioSource.Play();
             }
         }
+    }
+    private void FixedUpdate()
+    {
+        currentSoundsTime -= Time.deltaTime;
+    }
+
+    private void resetList()
+    {
+        for (int i = 0; i < soundcliplengths; i++)
+            lastCouple.Add(i);
     }
 }

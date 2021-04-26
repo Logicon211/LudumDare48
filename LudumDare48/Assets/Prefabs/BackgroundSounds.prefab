@@ -148,57 +148,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c136212b2353f9949a4e994f56fbadd1, type: 3}
   - {fileID: 8300000, guid: 0fbe120deedac0246b2340721c3aa576, type: 3}
   - {fileID: 8300000, guid: e1c16dcba5aee354d95203278ebc8d04, type: 3}
-  - {fileID: 8300000, guid: 8f2ad79cb7e8c864b9483504458b274c, type: 3}
+  - {fileID: 8300000, guid: 6f1d4155e4e51d64e8cc9030fcfb61cd, type: 3}
   - {fileID: 8300000, guid: 530c2f57e6b3284429931128d08284b8, type: 3}
   - {fileID: 8300000, guid: f77111b2105a38c48aa2f76433ee7f5b, type: 3}
-  soundsCooldown: 5
-  currentSoundsTime: 3
-  lowPassEnabled: 1
-  reverbEnabled: 1
---- !u!1 &1475932366
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1475932367}
-  - component: {fileID: 1475932369}
-  m_Layer: 0
-  m_Name: CraigThoughts
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1475932367
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475932366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3068412602669611833}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1475932369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475932366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6b6d9a00075cc43884e3708f89ad79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
   - {fileID: 8300000, guid: 2d818507080117f4f990a927c493a08f, type: 3}
   - {fileID: 8300000, guid: f7e2e1613325ae346b5199766fea3501, type: 3}
   - {fileID: 8300000, guid: e83e750eba9c2524a9c131155a7e3ad6, type: 3}
@@ -208,11 +160,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4b3d09fa8cb628e47b8df8433e8afb04, type: 3}
   - {fileID: 8300000, guid: ce2c7d212458a814d917bdda6e03ff59, type: 3}
   - {fileID: 8300000, guid: 77669852248e9fc42bcc5c5503b231b3, type: 3}
-  - {fileID: 8300000, guid: 6f1d4155e4e51d64e8cc9030fcfb61cd, type: 3}
-  soundsCooldown: 11
-  currentSoundsTime: 11
-  lowPassEnabled: 1
-  reverbEnabled: 1
+  soundsCooldown: 10
+  currentSoundsTime: 3
 --- !u!1 &3068412602669611834
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +190,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 504836925}
-  - {fileID: 1475932367}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

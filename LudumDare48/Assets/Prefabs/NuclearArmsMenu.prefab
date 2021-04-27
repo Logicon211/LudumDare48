@@ -2293,8 +2293,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5995789733426527538, guid: 45b85a383e97c734fa42b98664f5964c,
-          type: 3}
+      - m_Target: {fileID: 1218116580, guid: 45b85a383e97c734fa42b98664f5964c, type: 3}
         m_TargetAssemblyTypeName: GameQuitListener, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1

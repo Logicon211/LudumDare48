@@ -6,9 +6,9 @@ public class GameQuitListener : MonoBehaviour {
 
 	public bool hitEscape = false;
 
-	void Awake() {
-		DontDestroyOnLoad(this.gameObject);
-	}
+	// void Awake() {
+	// 	DontDestroyOnLoad(this.gameObject);
+	// }
 	// Use this for initialization
 	void Start () {
 		
@@ -16,9 +16,9 @@ public class GameQuitListener : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		if (Input.GetKey ("escape") && hitEscape) {
-			Application.Quit ();
-		}
+		// if (Input.GetKey ("escape") && hitEscape) {
+		// 	Application.Quit ();
+		// }
 	}
 
 	public void QuitGame() {

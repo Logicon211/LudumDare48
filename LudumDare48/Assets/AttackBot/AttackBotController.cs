@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackBotController : MonoBehaviour, IDamageable<float>, IKillable
 {
-    private float health = 3f;
+    private float health = 2f;
     private float attackRange = 50f;
     private float shotAngleHorizontal = 5f;
     private float shotAngleVertical = 90f;

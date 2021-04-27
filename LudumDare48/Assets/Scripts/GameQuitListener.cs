@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameQuitListener : MonoBehaviour {
 
+	public bool hitEscape = false;
+
 	void Awake() {
 		DontDestroyOnLoad(this.gameObject);
 	}
@@ -14,9 +16,9 @@ public class GameQuitListener : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		// if (Input.GetKey ("escape")) {
-		// 	Application.Quit ();
-		// }
+		if (Input.GetKey ("escape") && hitEscape) {
+			Application.Quit ();
+		}
 	}
 
 	public void QuitGame() {

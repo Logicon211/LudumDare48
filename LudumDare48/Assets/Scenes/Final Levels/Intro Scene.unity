@@ -219,7 +219,7 @@ PrefabInstance:
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: slides.Array.size
-      value: 13
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -355,17 +355,35 @@ PrefabInstance:
         type: 3}
       propertyPath: slides.Array.data[10]
       value: 
-      objectReference: {fileID: 21300000, guid: 9095acc5e1cfff04183b222003aefc82,
+      objectReference: {fileID: 21300000, guid: 34c328ca45ed99e408becc7fd60a8940,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: slides.Array.data[11]
       value: 
-      objectReference: {fileID: 21300000, guid: dc483ec0418426b4c8ea07379a21b20e,
+      objectReference: {fileID: 21300000, guid: 4f71fe5cc1cccbb49a722bc1c6b71467,
         type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: slides.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: fcd26c1fa04e1404d88230c7fd9bc0e9,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: slides.Array.data[13]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9095acc5e1cfff04183b222003aefc82,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: slides.Array.data[14]
+      value: 
+      objectReference: {fileID: 21300000, guid: dc483ec0418426b4c8ea07379a21b20e,
+        type: 3}
+    - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
+        type: 3}
+      propertyPath: slides.Array.data[15]
       value: 
       objectReference: {fileID: 21300000, guid: 43223fc90fcffa5409b408fbb7bd5f88,
         type: 3}
@@ -911,7 +929,7 @@ PrefabInstance:
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceLines.Array.size
-      value: 13
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -1764,7 +1782,7 @@ PrefabInstance:
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: slideToStopMusicAndJingle
-      value: 11
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
@@ -1775,12 +1793,12 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceLines.Array.data[11]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: ec4cf2767adf37641b3844692bae986c, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceLines.Array.data[12]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: b6e2ee1591a089249b61cde8294dae0e, type: 3}
     - target: {fileID: 114275543527505588, guid: d5aebe7870488f946853beed4c5d3d95,
         type: 3}
       propertyPath: voiceChoice0.Array.data[0]

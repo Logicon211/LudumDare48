@@ -54,6 +54,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -62,9 +63,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -364,6 +365,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      CraigPunch_5: 21300010
+      CraigPunch_9: 21300018
+      CraigPunch_0: 21300000
+      CraigPunch_7: 21300014
+      CraigPunch_2: 21300004
+      CraigPunch_1: 21300002
+      CraigPunch_6: 21300012
+      CraigPunch_3: 21300006
+      CraigPunch_8: 21300016
+      CraigPunch_4: 21300008
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

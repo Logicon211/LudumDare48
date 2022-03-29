@@ -78,6 +78,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -86,9 +87,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -556,6 +557,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      RunningCraig_15: 21300030
+      RunningCraig_10: 21300020
+      RunningCraig_16: 21300032
+      RunningCraig_12: 21300024
+      RunningCraig_6: 21300012
+      RunningCraig_3: 21300006
+      RunningCraig_7: 21300014
+      RunningCraig_11: 21300022
+      RunningCraig_4: 21300008
+      RunningCraig_2: 21300004
+      RunningCraig_8: 21300016
+      RunningCraig_9: 21300018
+      RunningCraig_14: 21300028
+      RunningCraig_13: 21300026
+      RunningCraig_0: 21300000
+      RunningCraig_17: 21300034
+      RunningCraig_5: 21300010
+      RunningCraig_1: 21300002
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

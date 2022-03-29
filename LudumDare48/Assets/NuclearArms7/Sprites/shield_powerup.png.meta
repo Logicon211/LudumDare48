@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -80,9 +81,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -508,6 +509,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      shield_powerup_13: 21300026
+      shield_powerup_8: 21300016
+      shield_powerup_4: 21300008
+      shield_powerup_15: 21300030
+      shield_powerup_10: 21300020
+      shield_powerup_3: 21300006
+      shield_powerup_6: 21300012
+      shield_powerup_1: 21300002
+      shield_powerup_5: 21300010
+      shield_powerup_2: 21300004
+      shield_powerup_7: 21300014
+      shield_powerup_0: 21300000
+      shield_powerup_14: 21300028
+      shield_powerup_12: 21300024
+      shield_powerup_9: 21300018
+      shield_powerup_11: 21300022
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
